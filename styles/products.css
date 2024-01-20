@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
 
-/* ----reset css----- */
 :root {
   --amarilloTitulos: #f5d38e;
   --amarilloBoton: #f2c66d;
@@ -14,7 +13,7 @@
   --tipo-principal: "Cormorant Garamond", serif;
   --tipo-secundaria: "Manrope", sans-serif;
 }
-
+/* ----reset css----- */
 * {
   margin: 0;
   padding: 0;
@@ -104,9 +103,10 @@ header {
   font-style: normal;
   font-weight: 400;
 }
-.navbar_items > li > a:hover {
+.navbar_items .active a {
   color: var(--amarilloBoton);
   border-bottom: 3px solid var(--amarilloBoton);
+  border-radius: 0.13rem;
   font-weight: 700;
 }
 .navbar_icons {
@@ -204,9 +204,6 @@ header {
   .navbar_items > li > a {
     font-size: 0.8em;
   }
-  .navbar_items > li > a:hover {
-    border-bottom: 3px solid var(--amarilloBoton);
-  }
   .navbar_icons {
     gap: 1rem;
   }
@@ -237,13 +234,42 @@ header {
   }
 }
 @media screen and (max-width: 480px) {
+  header {
+    background: var(--principal);
+    height: 24rem;
+  }
   .navbar_items {
     display: none;
   }
-  .hamburguer_menu{
+  .hamburguer_menu {
     display: block;
     color: var(--secundario);
+  }
+
+  .hamburguer_menu >svg{
     width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .container_section_search {
+    height: 18rem;
+    gap:0.5rem;
+  }
+  .container_section_search > h1 {
+    height: 4rem;
+    font-size: 3em;
+  }
+  .input-container {
+    width: 18rem;
+    height: 2.5rem;
+  }
+  .input-container input {
+    font-size: 0.9em;
+  }
+
+  .input-container svg {
+    width: 1rem;
+    height: 1rem;
   }
   
 }
