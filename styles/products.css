@@ -7,6 +7,7 @@
   --grisInput: #323842;
   --negro: #171a1f;
   --verdeBotones: #0d554a;
+  --bordeABotones: #9AEFE2;
   --secundario: #fff;
   --principal: #093931;
   /* Tipografía */
@@ -181,6 +182,61 @@ header {
   height: 1.5rem;
 }
 
+/* -------------MAIN------------------------------------------------- */
+main{
+  background: var(--secundario);
+  height: 143.81rem;
+}
+.conteiner_buttons{
+  height: 2.375rem;
+  margin-top: 4.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.buttons{
+  display: flex;
+}
+.buttons >li{
+  width: 9.2875rem;
+  height: 2.375rem;
+  color:var(--verdeBotones);
+  padding: 0.5rem 0rem;
+}
+.buttons >li >a{
+  font-family: var(--tipo-secundaria);
+  border-right: 1px solid var(--bordeABotones)  ;
+  font-size: 0.875em;
+  text-align: center;
+}
+
+.buttons >li .last_btn,.buttons .btn_active >a{
+  border-right:none ;
+}
+
+.buttons .btn_active{
+  width: 9.2875rem;
+  height: 2.375rem;
+  border-radius: 1.1875rem;
+  color: var(--secundario);
+  background: var(--verdeBotones);
+  border-radius: 1.1875rem;;
+  padding: 0.5rem 0rem;
+}
+.btn_filter{
+  display: none;
+}
+
+.sort_by{
+  width: 8.625rem;
+  height: 2.25rem;
+  color:var(--negro);
+  font-family: var(--tipo-secundaria);
+  font-size: 0.875em;
+  box-shadow: 0px 2px 0px 0px rgba(144,149,160,0.75);
+}
+
+
 @media screen and (max-width: 1024px) {
   .input-container {
     width: 43rem;
@@ -260,16 +316,38 @@ header {
     font-size: 3em;
   }
   .input-container {
-    width: 18rem;
+    width: 14rem;
     height: 2.5rem;
   }
   .input-container input {
     font-size: 0.9em;
   }
-
   .input-container svg {
     width: 1rem;
     height: 1rem;
+  }
+  /* --------MAIN------------------------------------------ */
+  .btn_filter{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 8.625rem;
+    height: 2.25rem;
+    color:var(--negro);
+    font-family: var(--tipo-secundaria);
+    font-size: 0.875em;
+    background: var(--secundario);
+    box-shadow: 0px 2px 0px 0px rgba(144,149,160,0.75);
+  }
+
+  .btn_filter >svg{
+    width: 1rem;
+    height: 1rem;
+    color:var(--negro);
+    margin-left: auto;
+  }
+  .buttons{
+    display: none;
   }
   
 }
