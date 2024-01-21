@@ -186,6 +186,11 @@ header {
 main{
   background: var(--secundario);
   height: 143.81rem;
+  /* display: flex;
+  justify-content:center;
+  flex-direction: column; */
+  /* align-items: initial;
+  flex-direction: column; */
 }
 .conteiner_buttons{
   height: 2.375rem;
@@ -241,19 +246,18 @@ main{
   height: 25.25rem;
   margin: 3rem 8.25rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .cards {
-  width:20%;
+  width:17.25rem;
   height: 25.625rem;
-  margin: 3rem 1.5rem;
+  margin: 3rem 0rem;
   flex-shrink: 0;
   border-radius: 0.5rem;
-  background: #fff;
-  /* background-color: mediumslateblue; */
-  /* box-shadow: 0px 0px 1px 0px rgba(23, 26, 31, 0.07), 0px 0px 2px 0px rgba(23, 26, 31, 0.12); */
+  background:var(--secundario);
   box-shadow: 0px 0px 5px 0px rgba(23, 26, 31, 0.2),
     0px 0px 10px 0px rgba(23, 26, 31, 0.3);
 }
@@ -265,23 +269,18 @@ main{
   border-top-right-radius: 0.5rem;
   background-size: cover;
 }
-
 .cards > h4 {
-  color: #171a1f;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%;
+  color:var(--negro);
+  margin: 0.75rem 0rem 0rem 0.75rem;
+  font-family: var(--tipo-principal);
+  font-size: 1.5em;
 }
-
 .cards > p {
-  color: #171a1f;
-  font-family: "Manrope", sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 162.5%;
+  color: var(--negro);
+  margin-left: 0.75rem;
+  margin-top: 2px;
+  font-family: var(--tipo-secundaria);
+  font-size: 1em;
 }
 
 
