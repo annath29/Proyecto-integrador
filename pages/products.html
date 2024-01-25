@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Products</title>
-    <link rel="shortcut icon" href="../assets/Header/DarlingLogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link
+      rel="shortcut icon"
+      href="../assets/Header/DarlingLogo.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="../styles/products.css" />
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <a href=""  class="navbar_logo">
+        <a href="" class="navbar_logo">
           <img src="../assets/Header/Darling..png" alt="" />
         </a>
         <ul class="navbar_items">
@@ -69,9 +74,19 @@
           </div>
         </ul>
         <span class="hamburguer_menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-            </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+            />
+          </svg>
         </span>
       </nav>
       <section class="container_section_search">
@@ -110,7 +125,7 @@
       </section>
     </header>
     <main>
-      <section class="conteiner_buttons">
+      <section class="container_buttons">
         <ul class="buttons">
           <li class="btn_active"><a href="">All</a></li>
           <li><a href="">Rings</a></li>
@@ -120,83 +135,169 @@
         </ul>
         <span class="btn_filter">
           Filter
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-left" viewBox="0 0 16 16">
-            <path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-filter-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"
+            />
           </svg>
         </span>
         <select class="sort_by">
           <option value="val1">Sort by price</option>
-          <option value="val2">val2</option>
         </select>
       </section>
-      <section class="conteiner_products">
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto1.png" alt="Luxury Gems Necklace" />
-          <h4>Luxury Gems Necklace</h4>
-          <p>$168.76</p>
-        </div>
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto2.png" alt="Aurora Ring" />
-          <h4>Aurora Ring</h4>
-          <p>$125.28</p>
-        </div>
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto3.png" alt="Reflections Necklace" />
-          <h4>Reflections Necklace</h4>
-          <p>$620.73</p>
-        </div>
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto4.png"   alt="Dreamy Infinity Ring"      />
-          <h4>Dreamy Infinity Ring</h4>
-          <p>$527.71</p>
-        </div>
+      <section class="products">
+        <section class="container_products">
+          <div class="cards">
+            <img
+              src="../assets/Catalogo/catalogo_producto1.png"
+              alt="Luxury Gems Necklace"
+            />
+            <h3>Luxury Gems Necklace</h3>
+            <p>$168.76</p>
+          </div>
+          <div class="cards">
+            <img
+              src="../assets/Catalogo/catalogo_producto2.png"
+              alt="Aurora Ring"
+            />
+            <h3>Aurora Ring</h3>
+            <p>$125.28</p>
+          </div>
+          <div class="cards">
+            <img
+              src="../assets/Catalogo/catalogo_producto3.png"
+              alt="Reflections Necklace"
+            />
+            <h3>Reflections Necklace</h3>
+            <p>$620.73</p>
+          </div>
+          <div class="cards">
+            <img
+              src="../assets/Catalogo/catalogo_producto4.png"
+              alt="Dreamy Infinity Ring"
+            />
+            <h3>Dreamy Infinity Ring</h3>
+            <p>$527.71</p>
+          </div>
+          <div class="cards">
+            <img
+              src="../assets/Catalogo/catalogo_producto5.png"
+              alt="Opulent Jewels Ring"
+            />
+            <h3>Opulent Jewels Ring</h3>
+            <p>$168.76</p>
+          </div>
+          <div class="cards">
+            <img
+              src="../assets/Catalogo/catalogo_producto6.png"
+              alt="Serene Solitaire Earrings"
+            />
+            <h3>Serene Solitaire Earrings</h3>
+            <p>$125.28</p>
+          </div>
+          <div class="cards">
+            <img
+              src="../assets/Catalogo/catalogo_producto7.png"
+              alt="Timeless Halo Earrings"
+            />
+            <h3>Timeless Halo Earrings</h3>
+            <p>$620.73</p>
+          </div>
+          <div class="cards">
+            <img
+              src="../assets/Catalogo/catalogo_producto8.png"
+              alt="Exquisite Earrings"
+            />
+            <h3>Exquisite Earrings</h3>
+            <p>$527.71</p>
+          </div>
+        </section>
+        <section class="container_products big_cards">
+          <div class="cards big_card">
+            <img
+              src="../assets/Catalogo/catalogo_producto_img_grande.png"
+              alt="Timeless Elegance Ring"
+            />
+            <h3>Timeless Elegance Ring</h3>
+            <p>$168.76</p>
+          </div>
+          <div class="cards_group">
+            <div class="cards">
+              <img
+                src="../assets/Catalogo/catalogo_producto9.png"
+                alt="Luxury Charms Ring"
+              />
+              <h3>Luxury Charms Ring</h3>
+              <p>$620.73</p>
+            </div>
+            <div class="cards">
+              <img
+                src="../assets/Catalogo/catalogo_producto10.png"
+                alt="Blissful Bloom Ring"
+              />
+              <h3>Blissful Bloom Ring</h3>
+              <p>$620.73</p>
+            </div>
+            <div class="cards">
+              <img
+                src="../assets/Catalogo/catalogo_producto11.png"
+                alt="Sparkling Ring "
+              />
+              <h3>Sparkling Ring</h3>
+              <p>$620.73</p>
+            </div>
+            <div class="cards">
+              <img
+                src="../assets/Catalogo/catalogo_producto12.png"
+                alt="Glimmering Ring"
+              />
+              <h3>Glimmering Ring</h3>
+              <p>$620.73</p>
+            </div>
+          </div>
+        </section>
       </section>
-      <!-- <section class="conteiner_products">
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto1.png" alt="Luxury Gems Necklace" />
-          <h4>Luxury Gems Necklace</h4>
-          <p>$168.76</p>
-        </div>
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto2.png" alt="Aurora Ring" />
-          <h4>Aurora Ring</h4>
-          <p>$125.28</p>
-        </div>
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto3.png" alt="Reflections Necklace" />
-          <h4>Reflections Necklace</h4>
-          <p>$620.73</p>
-        </div>
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto4.png"   alt="Dreamy Infinity Ring"      />
-          <h4>Dreamy Infinity Ring</h4>
-          <p>$527.71</p>
-        </div>
+      <section class="pagination">
+        <a href="#" class="page-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
+            <path
+              d="M13.8409 3.84091L12.5 2.5L5 10L12.5 17.5L13.8409 16.1591L7.68182 10L13.8409 3.84091Z"
+              fill="#9095A0"
+            />
+          </svg>
+        </a>
+        <a href="#" class="page-link">1</a>
+        <a href="#" class="page-link page-active">2</a>
+        <a href="#" class="page-link">3</a>
+        <a href="#" class="page-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 11.5C10.8284 11.5 11.5 10.8284 11.5 10C11.5 9.17157 10.8284 8.5 10 8.5C9.17157 8.5 8.5 9.17157 8.5 10C8.5 10.8284 9.17157 11.5 10 11.5Z" stroke="#9095A0" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 11.5C16.8284 11.5 17.5 10.8284 17.5 10C17.5 9.17157 16.8284 8.5 16 8.5C15.1716 8.5 14.5 9.17157 14.5 10C14.5 10.8284 15.1716 11.5 16 11.5Z" stroke="#9095A0" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 11.5C4.82843 11.5 5.5 10.8284 5.5 10C5.5 9.17157 4.82843 8.5 4 8.5C3.17157 8.5 2.5 9.17157 2.5 10C2.5 10.8284 3.17157 11.5 4 11.5Z" stroke="#9095A0" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#" class="page-link">10</a>
+        <a href="#" class="page-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5.83325 16.1591L7.17416 17.5L14.6741 10L7.17416 2.5L5.83325 3.84091L11.9923 10L5.83325 16.1591Z" fill="#9095A0"/>
+          </svg>
+        </a>
       </section>
-      <section class="conteiner_products">
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto1.png" alt="Luxury Gems Necklace" />
-          <h4>Luxury Gems Necklace</h4>
-          <p>$168.76</p>
-        </div>
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto2.png" alt="Aurora Ring" />
-          <h4>Aurora Ring</h4>
-          <p>$125.28</p>
-        </div>
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto3.png" alt="Reflections Necklace" />
-          <h4>Reflections Necklace</h4>
-          <p>$620.73</p>
-        </div>
-        <div class="cards">
-          <img src="../assets/Catalogo/catalogo_producto4.png"   alt="Dreamy Infinity Ring"      />
-          <h4>Dreamy Infinity Ring</h4>
-          <p>$527.71</p>
-        </div>
-      </section>
-      <section class="conteiner_servicios">
-        <div class="servicio">
+      <section class="container_service">
+        <div class="service">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="62"
@@ -257,10 +358,10 @@
               stroke-linecap="square"
             />
           </svg>
-          <h3>Delivery</h3>
+          <h4>Delivery</h4>
           <p>Ea esse elit anim commodo laborum pariatur nisi. Voluptate elit d</p>
         </div>
-        <div class="servicio">
+        <div class="service">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="62"
@@ -283,10 +384,10 @@
               stroke-linecap="square"
             />
           </svg>
-          <h3>Customer care</h3>
+          <h4>Customer care</h4>
           <p>Ea esse elit anim commodo laborum pariatur nisi. Voluptate elit d</p>
         </div>
-        <div class="servicio">
+        <div class="service">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="62"
@@ -330,11 +431,62 @@
               stroke-linecap="square"
             />
           </svg>
-          <h3>Payment security</h3>
+          <h4>Payment security</h4>
           <p>Ea esse elit anim commodo laborum pariatur nisi. Voluptate elit d</p>
         </div>
-      </section> -->
+      </section>
     </main>
-    <footer></footer>
+    <footer>
+      <section class="footer_suscribe">
+        <section class="footer_items">
+          <a href="">
+            <img src="../assets/Header/Darling..png" alt="" />
+          </a>
+          <div>
+            <ul>
+              <li><a href="./products.html">Shop</a></li>
+              <li><a href="">Collections</a></li>
+              <li><a href="">About</a></li>
+            </ul>
+            <ul>
+              <li><a href="">Contact</a></li>
+              <li><a href="">Privacy</a></li>
+              <li><a href="">Terms</a></li>
+            </ul>
+          </div>
+        </section>
+        <article>
+          <h3>Subscribe to our newsletter</h3>
+          <p>For product announcements and exclusive insights</p>
+          <section class="footer_input">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M12.8 13.2L3.2 13.2C2.5376 13.2 2 12.6624 2 12L2 3.99999C2 3.33759 2.5376 2.79999 3.2 2.79999L12.8 2.79999C13.4624 2.79999 14 3.33759 14 3.99999L14 12C14 12.6624 13.4624 13.2 12.8 13.2Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3.6001 5.20001L8.0001 8.80001L12.4001 5.20001" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <input type="text" name="" id="" placeholder="Input your email">
+            </div>
+            <button>Subscribe</button>
+          </section>
+        </article>
+      </section>
+      <section class="footer_networks">
+        <p>© 2022 Brand, Inc.</p>
+        <section class="footer_networks_icons">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M21.6001 6.06001C20.8801 6.36001 20.1601 6.60001 19.3201 6.66001C20.1601 6.18001 20.7601 5.40001 21.0601 4.50001C20.2801 4.98001 19.4401 5.28001 18.5401 5.46001C17.8201 4.68001 16.8001 4.20001 15.7201 4.20001C13.5601 4.20001 11.7601 5.94001 11.7601 8.16001C11.7601 8.46001 11.8201 8.76001 11.8801 9.06001C8.58009 8.88001 5.70009 7.32001 3.72009 4.92001C3.36009 5.52001 3.18009 6.18001 3.18009 6.90001C3.18009 8.28001 3.90009 9.48001 4.92009 10.2C4.26009 10.2 3.66009 10.02 3.12009 9.72001V9.78001C3.12009 11.7 4.50009 13.26 6.30009 13.62C5.94009 13.68 5.64009 13.74 5.28009 13.74C5.04009 13.74 4.80009 13.74 4.56009 13.68C5.04009 15.24 6.54009 16.38 8.22009 16.44C6.90009 17.52 5.16009 18.12 3.30009 18.12C3.00009 18.12 2.64009 18.12 2.34009 18.06C4.14009 19.14 6.24009 19.8 8.46009 19.8C15.7201 19.8 19.6801 13.8 19.6801 8.58001C19.6801 8.40001 19.6801 8.22001 19.6801 8.10001C20.4001 7.50001 21.0601 6.84001 21.6001 6.06001Z" fill="white"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M21.5999 12C21.5996 10.1654 21.0737 8.36939 20.0844 6.82446C19.095 5.27954 17.6838 4.05043 16.0176 3.28266C14.3514 2.51488 12.5002 2.24059 10.683 2.49225C8.86578 2.74391 7.15874 3.51099 5.76395 4.70267C4.36915 5.89435 3.34502 7.46073 2.81279 9.21638C2.28055 10.972 2.26251 12.8434 2.7608 14.609C3.25909 16.3746 4.25283 17.9604 5.62439 19.1787C6.99595 20.3971 8.68789 21.1969 10.4999 21.4836L10.4999 14.775H8.0627V12H10.4999V9.88498C10.4999 7.47898 11.9333 6.14998 14.1257 6.14998C14.8457 6.15997 15.564 6.22254 16.2749 6.33718V8.69998H15.0641C14.8578 8.67258 14.6479 8.69196 14.4501 8.75668C14.2523 8.82141 14.0716 8.92982 13.9213 9.07388C13.7711 9.21794 13.6552 9.39396 13.5823 9.5889C13.5093 9.78383 13.4812 9.99269 13.4999 10.2V12H16.1627L15.7367 14.775H13.4999L13.4999 21.4836C15.7582 21.1263 17.8148 19.9748 19.2997 18.2363C20.7846 16.4978 21.6003 14.2863 21.5999 12Z" fill="white"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M19.8 3L4.2 3C3.88174 3 3.57652 3.12643 3.35147 3.35147C3.12643 3.57652 3 3.88174 3 4.2L3 19.8C3 20.1183 3.12643 20.4235 3.35147 20.6485C3.57652 20.8736 3.88174 21 4.2 21L19.8 21C20.1183 21 20.4235 20.8736 20.6485 20.6485C20.8736 20.4235 21 20.1183 21 19.8L21 4.2C21 3.88174 20.8736 3.57652 20.6485 3.35147C20.4235 3.12643 20.1183 3 19.8 3ZM8.3322 18.3564H5.6244L5.6244 9.75H8.3322L8.3322 18.3564ZM6.978 8.5686C6.6667 8.56765 6.36266 8.47447 6.10429 8.30083C5.84591 8.1272 5.64479 7.88088 5.52632 7.59301C5.40784 7.30513 5.37734 6.9886 5.43865 6.6834C5.49996 6.3782 5.65035 6.09801 5.8708 5.87822C6.09126 5.65843 6.37191 5.5089 6.67729 5.44852C6.98268 5.38814 7.29912 5.41961 7.58663 5.53895C7.87414 5.6583 8.11984 5.86018 8.29269 6.11908C8.46555 6.37798 8.5578 6.6823 8.5578 6.9936C8.55788 7.20086 8.51704 7.40609 8.43761 7.59753C8.35819 7.78897 8.24175 7.96284 8.09497 8.10917C7.9482 8.2555 7.77397 8.37141 7.58229 8.45025C7.39062 8.52909 7.18526 8.56931 6.978 8.5686ZM18.3726 18.3564H15.72V14.1936C15.72 13.1814 15.72 11.9436 14.31 11.9436C12.9 11.9436 12.7302 13.0128 12.7302 14.1372V18.4128H10.08L10.08 9.75L12.5616 9.75V10.9314H12.618C12.8739 10.4889 13.2453 10.1243 13.6925 9.87657C14.1396 9.62885 14.6457 9.50732 15.1566 9.525C17.8644 9.525 18.372 11.325 18.372 13.6314L18.3726 18.3564Z" fill="white"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M21.4199 8.15997C21.4199 8.15997 21.2399 6.83997 20.6399 6.23997C19.9199 5.45997 19.0799 5.45997 18.7199 5.39997C16.0199 5.21997 11.9999 5.21997 11.9999 5.21997C11.9999 5.21997 7.9799 5.21997 5.2799 5.39997C4.9199 5.45997 4.0799 5.45997 3.3599 6.23997C2.7599 6.83997 2.5799 8.15997 2.5799 8.15997C2.5799 8.15997 2.3999 9.71997 2.3999 11.28L2.3999 12.72C2.3999 14.28 2.5799 15.84 2.5799 15.84C2.5799 15.84 2.7599 17.16 3.3599 17.76C4.0799 18.54 5.0399 18.48 5.4599 18.6C7.0199 18.72 11.9999 18.78 11.9999 18.78C11.9999 18.78 16.0199 18.78 18.7199 18.6C19.0799 18.54 19.9199 18.54 20.6399 17.76C21.2399 17.16 21.4199 15.84 21.4199 15.84C21.4199 15.84 21.5999 14.28 21.5999 12.72L21.5999 11.28C21.5999 9.71997 21.4199 8.15997 21.4199 8.15997ZM10.0199 14.52L10.0199 9.11997L15.1799 11.82L10.0199 14.52Z" fill="white"/>
+          </svg>
+        </section>  
+      </section>
+    </footer>
   </body>
 </html>

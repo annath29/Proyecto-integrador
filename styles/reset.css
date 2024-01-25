@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    text-decoration: none;
+  }
+  
+  img,
+  figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+  }
+  
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  p a {
+    display: inline;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  form,
+  input,
+  textarea,
+  select,
+  button,
+  label {
+    font-family: inherit;
+    display: block;
+    border: none;
+  }
+  table, tr, td {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  body {
+    min-height: 100vh;
+    font-size: 100%;
+    line-height: 1.4em;
+    /* font-smooth: always;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; */
+  }
+  
