@@ -36,6 +36,7 @@
     font-family: inherit;
     display: block;
     border: none;
+    background: none;
   }
   table, tr, td {
     border-collapse: collapse;

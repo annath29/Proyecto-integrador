@@ -46,18 +46,18 @@ header {
 }
 main {
   background-color: var(--secundario);
-  padding: 0rem 27.5rem;
+  /* padding: 0rem 27.5rem; */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: auto;
 }
 .container_thank_image {
   /* background-color: rebeccapurple; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 3rem;
+  margin: 3rem 0rem;
 }
 .container_thank_image > img {
   width: auto;
@@ -74,10 +74,9 @@ main {
 }
 
 .container_order {
-    width: 35rem;
-    padding: 1.5rem;
-    margin-bottom: 9rem;
-    /* border: 1px solid salmon; */
+  padding: 1.5rem;
+  margin-bottom: 6rem;
+  /* border: 1px solid salmon; */
 }
 
 .order_data .row,
@@ -85,6 +84,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15em;
   /* border: #171a1f 1px solid; */
 }
 .order_data .row,
@@ -123,7 +123,7 @@ hr {
 }
 /* apariencia */
 .order::-webkit-scrollbar {
--webkit-appearance: none;
+  -webkit-appearance: none;
 }
 /* color */
 .order::-webkit-scrollbar-thumb {
@@ -157,10 +157,171 @@ hr {
   margin-right: 0.75rem;
 }
 
-button{
-   margin: 1.5rem auto 0rem auto;
-   border-radius: 1.375rem;
-   padding: 0.5rem 1rem;
-   background: var(--verdeBotones);
-   color: var(--secundario);
+.container_order > button {
+  margin: 1.5rem auto 0rem auto;
+  border-radius: 1.375rem;
+  padding: 0.5rem 1rem;
+  background: var(--verdeBotones);
+  color: var(--secundario);
+}
+
+@media screen and (max-width: 960px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  h2,
+  button,
+  h3 {
+    font-size: 0.9em;
+  }
+  p {
+    font-size: 0.8em;
+  }
+  svg {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  .order .row .column > figcaption > p {
+    font-size: 0.6em;
+  }
+  .order .row .column > figcaption > h3 {
+    font-size: 0.7em;
+  }
+  .order_data .row,
+  .order .row {
+    gap: 9em;
+  }
+  .container_thank_image > img {
+    width: 13rem;
+  }
+  .container_thank_image {
+    margin: 3rem 0rem 2rem 0rem;
+  }
+}
+
+@media screen and (max-width: 768px){
+  h1 {
+    font-size: 1.6em;
+  }
+  h2,
+  button,
+  h3 {
+    font-size: 0.8em;
+  }
+  p {
+    font-size: 0.7em;
+  }
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .order .row .column > figcaption > p {
+    font-size: 0.5em;
+  }
+  .order .row .column > figcaption > h3 {
+    font-size: 0.6em;
+    margin: 0rem 0rem 0rem 0.25rem;
+  }
+  .container_thank_image > img {
+    width: 11rem;
+  }
+  .container_thank_image {
+    margin: 3rem 0rem 1rem 0rem;
+  }
+  .order_data .row,
+  .order .row {
+    gap: 6em;
+  }
+  .order_data .row, hr {
+    margin-bottom: 0.5rem;
+  }
+  .order_data .row .column_img > svg {
+    width: 2.8rem;
+    height: 1.5rem;
+  }
+  .container_order {
+    margin-bottom: 5rem;
+  }
+  .order {
+    height: 12rem;
+  }
+  .order .row .column > img {
+    width: 5rem;
+    height: 5rem; 
+  }
+  .order .row {
+    margin-top: 1rem;
+  }
+  .order::-webkit-scrollbar:vertical {
+    width: 0.6rem;
+  }
+  .container_thank_image > figcaption > h1 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width:480px) {
+  h1 {
+    font-size: 1.3em;
+  }
+  h2,
+  button,
+  h3 {
+    font-size: 0.7em;
+    line-height: 1rem;
+  }
+  p {
+    font-size: 0.6em;
+  }
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+  .order .row .column > figcaption > p {
+    font-size: 0.4em;
+    line-height: 1rem;
+  }
+  .order .row .column > figcaption > h3 {
+    font-size: 0.5em;
+    line-height: 1rem;
+  }
+  .container_thank_image > img {
+    width: 9rem;
+    margin-bottom: 1rem;
+  }
+  .container_thank_image {
+    margin: 3rem 0rem 0rem 0rem;
+  }
+  .container_order {
+    margin-bottom: 1.5rem;
+  }
+  .order .row {
+    gap: 3em;
+  }
+  .order {
+    height: 5rem;
+  }
+  .order_data .row{
+    gap:1em;
+  }
+  .order_data .row, hr {
+    margin-bottom: 0.25rem;
+  }
+  .order .row >div{
+    display: flex;
+    align-self:flex-start;
+  }
+  .order .row > div > p {
+    margin: 0rem 0.2rem;
+  }
+  .order .row .column > img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .order .row .column > figcaption {
+    margin-left: 0.5rem;
+  }
+  .order::-webkit-scrollbar:vertical {
+    width:4px;
+  }
 }

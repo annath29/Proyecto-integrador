@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+
+:root {
+  --amarilloBoton: #f2c66d;
+  --textoBotonAmarillo: #6B4A09;
+  --azulLink: #379AE6;
+  --grisBorder: #9095a0;
+  --negro: #171a1f;
+  --verdeBotones: #0d554a;
+  --secundario: #fff;
+  --principal: #093931;
+  /* Tipografía */
+  --tipo-principal: "Cormorant Garamond", serif;
+  --tipo-secundaria: "Manrope", sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.125em;
+}
+
+h5 {
+  font-size: 0.875em;
+}
+
+a,
+p {
+  font-size: 0.75em;
+}
+
+button {
+  font-size: 1em;
+}
+
+h5,
+p,
+a,
+button {
+  font-family: var(--tipo-secundaria);
+}
+
+h1,
+h2,
+h4 {
+  font-family: var(--tipo-principal);
+}
+
+header {
+  height: auto;
+}
+
+main {
+  padding: 3rem 0rem 3rem 8.5rem;
+}
+
+.shopping_container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 8.5rem 0rem 0rem;
+  /* border: 1px solid black; */
+}
+
+.order {
+  padding: 1.5rem;
+  /* border: 1px solid red; */
+  margin-bottom: 6rem;
+}
+
+.order .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.order .row .column {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem
+}
+
+.order .row .column>img {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+}
+
+.order .row .column>figcaption {
+  align-self: center;
+}
+
+.order .row>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+.order .row>div>button>svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.payment_method {
+  padding: 1.5rem;
+  border: 1px solid rebeccapurple;
+  margin-bottom: 1.5rem;
+}
+
+.payment_method>a {
+  color: var(--azulLink);
+  margin-top: 0.5rem;
+}
+
+.payment_method>figure {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--verdeBotones);
+  background: #F8F9FA;
+  padding: 0.75rem;
+  margin: 0.5rem 0rem 2rem 0rem;
+}
+
+.payment_method>figure>img {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.payment_method>figure>figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 7rem;
+}
+
+.payment_method .container_input {
+  display: flex;
+  margin: 0.5rem 0rem 0.75rem 0rem;
+  gap: 0.5rem;
+}
+
+.container_input>input {
+  border-radius: 0.5rem;
+  border: 1px solid var(--grisBorder);
+  padding: 0.5rem;
+}
+
+.container_input>button {
+  font-size: 0.875em;
+  background-color: var(--amarilloBoton);
+  border-radius: 0.25rem;
+  color: #6B4A09;
+  padding: 0.5rem;
+}
+
+.payment_method>p {
+  color: #8F640C;
+}
+
+.payment_method .container_summary {
+  margin-top: 2.25rem;
+}
+
+.container_summary>div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.container_summary div .value {
+  font-size: 0.875em;
+  font-weight: 700;
+}
+
+.container_summary .total_price {
+  margin: 1.5rem 0rem;
+}
+
+.container_summary .total_price .value {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: #E8502E;
+}
+
+.payment_method>button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secundario);
+  background: var(--principal);
+  border-radius: 1.3rem;
+  padding: 0.5rem 0rem;
+}
+
+.container_other_products {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 0rem 3rem 0rem;
+  padding: 3rem 0rem;
+
+}
+
+.products_title {
+  width: calc(100%-8.5rem);
+  display: flex;
+  justify-content: space-between;
+  margin-right: 8.5rem;
+}
+
+.products_title>a {
+  color: #565E6C;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.other_products {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+.cards {
+  width: 16rem;
+  height: auto;
+}
+
+.cards>h2 {
+  margin: 0.75rem 0rem 0rem 0.75rem;
+  font-family: var(--tipo-principal);
+  font-size: 1.5em;
+}
