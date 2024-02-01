@@ -111,7 +111,7 @@ main {
 
 .payment_method {
   padding: 1.5rem;
-  border: 1px solid rebeccapurple;
+  /* border: 1px solid rebeccapurple; */
   margin-bottom: 1.5rem;
 }
 
