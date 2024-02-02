@@ -170,8 +170,9 @@ main {
     padding: 0.5rem;
 }
 
-.active_size {
+.sizes >div .active_size {
     border: 1px solid var(--activeSize);
+    color: var(--activeSize);
 }
 
 .description_buy_product .quantity {
@@ -397,7 +398,47 @@ main {
     margin-right: 1.12rem;
 }
 
+@media screen and (max-width:1240px){
+    main {
+        padding: 0rem 0rem 0rem 6rem;
+    }    
+    .breadcrumbs {
+        margin: 4rem 6rem 1.5rem 0rem;
+    }
+    .container_product_description {
+        margin: 0rem 6rem 4.5rem 0rem;
+        /* gap: 5rem; */
+    }
+    .container_video_description {
+        margin: 0rem 6rem 3.5rem 0rem;
+        /* padding: 3rem 4.5rem 4.5rem 4.5rem; */
+        /* gap: 5rem; */
+    }    
+    .container_service{
+        margin-right: 6rem;
+    }
+}
 @media screen and (max-width:1150px) {
+    main {
+        padding: 0rem 0rem 0rem 5rem;
+    }    
+    .breadcrumbs {
+        margin: 4rem 5rem 1.5rem 0rem;
+    }
+    .container_product_description {
+        margin: 0rem 5rem 4.5rem 0rem;
+        /* gap: 5rem; */
+    }
+    .container_video_description {
+        margin: 0rem 5rem 3.5rem 0rem;
+        /* padding: 3rem 4.5rem 4.5rem 4.5rem; */
+        /* gap: 5rem; */
+    }    
+    .container_service{
+        margin-right: 5rem;
+    }
+
+
     .footer_top_figure>img {
         height: 22rem;
     }
@@ -442,11 +483,29 @@ main {
     p {
         font-size: 0.9em;
     }
-
+    main {
+        padding: 0rem 0rem 0rem 4rem;
+    }    
+    .breadcrumbs {
+        margin: 3rem 4rem 1.5rem 0rem;
+    }
+    .container_product_description {
+        margin: 0rem 4rem 4.5rem 0rem;
+        /* gap: 5rem; */
+    }
+    .container_video_description {
+        margin: 0rem 4rem 3.5rem 0rem;
+        /* padding: 3rem 4.5rem 4.5rem 4.5rem; */
+        /* gap: 5rem; */
+    }    
+    .container_service{
+        margin-right: 4rem;
+    }
+    
     .footer_top_article {
         width: 25%;
     }
-
+    
     .footer_top_figure {
         width: 70%;
     }
@@ -479,7 +538,7 @@ main {
     p {
         font-size: 0.8em;
     }
-
+  
     .footer_top {
         padding: 3rem 0rem;
     }
@@ -510,6 +569,27 @@ main {
         width: 2rem;
         height: 2rem;
         padding: 0.2rem;
+    }
+}
+
+@media screen and (max-width:650px){
+    main {
+        padding: 0rem 0rem 0rem 2rem;
+    }    
+    .breadcrumbs {
+        margin: 4rem 2rem 1.5rem 0rem;
+    }
+    .container_product_description {
+        margin: 0rem 2rem 4.5rem 0rem;
+        /* gap: 5rem; */
+    }
+    .container_video_description {
+        margin: 0rem 2rem 3.5rem 0rem;
+        /* padding: 3rem 4.5rem 4.5rem 4.5rem; */
+        /* gap: 5rem; */
+    }    
+    .container_service{
+        margin-right: 2rem;
     }
 }
 
