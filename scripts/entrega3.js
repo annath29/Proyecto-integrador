@@ -1,4 +1,4 @@
-const listaProductos = [
+export const listaProductos = [
   {
     id: 1,
     nombre: "Luxury Charms Ring",
