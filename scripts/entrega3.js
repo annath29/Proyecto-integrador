@@ -227,7 +227,7 @@ const ordenarPorPrecio=(productos, orden) =>{
   console.log('Productos ordenados por precio descendente:', productosOrdenadosDescendente);
 
 //Funcion para calcular el total de la compra
-  const calcularTotalCompra = (productos) =>{
+const calcularTotalCompra = (productos) =>{
     let total = 0;  
     for (let i = 0; i < productos.length; i++) {
       const producto = productos[i];
