@@ -19,8 +19,8 @@
           <img src="../assets/Header/Darling..png" alt="" />
         </a>
         <ul class="navbar_items">
-          <li class="active"><a href="../index.html">Home</a></li>
-          <li><a href="./products.html">Shop</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li class="active"><a href="./products.html">Shop</a></li>
           <li><a href="">Collections</a></li>
           <li><a href="">About</a></li>
           <li><a href="">Contact</a></li>
@@ -45,7 +45,7 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <svg
+            <svg id="btn_cart"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -127,11 +127,11 @@
     <main>
       <section class="container_buttons">
         <ul class="buttons">
-          <li class="btn_active"><a href="">All</a></li>
-          <li><a href="">Rings</a></li>
-          <li><a href="">Bracelets</a></li>
-          <li><a href="">Necklaces</a></li>
-          <li><a href="" class="last_btn">Earrings</a></li>
+          <li id="All_products" class="btn_active"><a href="">All</a></li>
+          <li id="Rings"><a href="">Rings</a></li>
+          <li id="Bracelets"><a href="">Bracelets</a></li>
+          <li id="Necklaces"><a href="">Necklaces</a></li>
+          <li id="Earrings"><a href="" class="last_btn">Earrings</a></li>
         </ul>
         <span class="btn_filter">
           Filter
@@ -488,5 +488,7 @@
         </section>  
       </section>
     </footer>
+    <script type="module" src="../module/modalCart.js"></script>
+    <script src="../scripts/products.js"></script>
   </body>
 </html>

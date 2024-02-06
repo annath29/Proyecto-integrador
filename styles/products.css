@@ -472,6 +472,156 @@ footer {
   width: 1.5rem;
   height: 1.5rem;
 }
+/* -----------------MODAL------------------------------ */
+
+.modalCart {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #05050549;
+}
+
+.closeModal{
+  display: none;
+}
+#close{
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.modalCart .cart {
+  width: 30%;
+  height: 100%;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.cart .cart_top{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cart .cart_top >h1{
+  font-size: 2.5em;
+  font-family: var(--tipo-principal);
+  color: var(--principal);
+  margin-bottom: 1.5rem;
+}
+
+.cart .cart_top >button>img{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+#products{
+  overflow-y: scroll;
+}
+#products::-webkit-scrollbar:vertical {
+  width: 0.625rem;
+}
+/* apariencia */
+#products::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+/* color */
+#products::-webkit-scrollbar-thumb {
+  background-color: var(--grisTexto);
+  border-radius: 1.2rem;
+  border: 2px solid var(--secundario);
+}
+
+.modalCart .cart_product{
+  display: flex;
+  align-items: center;
+  padding: 1rem 0rem;
+  gap:1rem;
+}
+.modalCart .cart_product:not(:last-child) {
+  border-bottom: 1px solid #DEE1E6;
+}
+.modalCart .cart >:nth-last-child(3) {
+  margin-bottom: auto;
+}
+.cart_product >figure{
+  display: flex;
+  gap: 1rem;
+}
+.cart_product >figure>img{
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.25rem;
+}
+.cart_product >figure>figcaption{
+  align-self: center;
+}
+.cart_product >figure>figcaption>h4{
+  font-size: 1.125em;
+  font-family: var(--tipo-principal);
+}
+.cart_product >figure>figcaption .price{
+  font-size: 0.875em;
+  font-family: var(--tipo-secundaria);
+}
+.cart_product >figure>figcaption .code{
+  font-size: 0.75em;
+  font-family: var(--tipo-secundaria);
+  color: var(--grisTexto);
+}
+.cart_product >div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.875em;
+}
+
+.cart .total{
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #DEE1E6;
+  margin-top: 6rem;
+  padding: 0.5rem 1rem;
+}
+.cart .total >p{
+  font-size: 0.75em;
+  font-family: var(--tipo-secundaria);
+}
+.cart .total>h2{
+  font-size: 1.5em;
+  font-family: var(--tipo-principal);
+}
+.cart >button{
+  width: calc(100% - 1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secundario);
+  background: var(--principal);
+  border-radius: 1.3rem;
+  font-size: 1em;
+  font-family: var(--tipo-secundaria);
+  margin: 1rem 0.5rem 0rem 0.5rem;
+  padding: 0.5rem 0rem;
+}
+/* ----------if cartEmpty----- */
+.cart >div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.cart .empty_alert{
+  margin-top: 0.5rem;
+  font-size: 1em;
+  font-family: var(--tipo-secundaria);
+  color:var(--negro);
+}
 
 @media screen and (max-width: 1240px) {
   main,
@@ -518,6 +668,30 @@ footer {
 }
 
 @media screen and (max-width: 1025px) {
+  .cart .cart_top >h1{
+    font-size: 2.3em;
+  }
+  .cart .total>h2{
+    font-size: 1.3em;
+  }
+  .cart_product >figure>figcaption>h4{
+    font-size: 1.1em;
+  }
+  .cart >button,
+  .cart .empty_alert{
+    font-size: 0.9em;
+  }
+  .cart_product >figure>figcaption .price,
+  .cart_product >div{
+    font-size: 0.8em;
+  }
+  .cart_product >figure>figcaption .code,
+  .cart .total >p{
+    font-size: 0.7em;
+  }
+ 
+  
+
   .input-container {
     width: 43rem;
   }
@@ -577,6 +751,34 @@ footer {
 }
 
 @media screen and (max-width: 960px) {
+  /* ---------cart----------- */
+  .modalCart .cart {
+    width: 40%;
+  }
+  .cart .cart_top >h1{
+    font-size: 2.1em;
+  }
+  .cart .total>h2{
+    font-size: 1.1em;
+  }
+  .cart_product >figure>figcaption>h4{
+    font-size: 1.025em;
+  }
+  .cart >button,
+  .cart .empty_alert{
+    font-size: 0.85em;
+  }
+  .cart_product >figure>figcaption .price,
+  .cart_product >div{
+    font-size: 0.75em;
+  }
+  .cart_product >figure>figcaption .code,
+  .cart .total >p{
+    font-size: 0.65em;
+  }
+  .cart >button {
+    margin: 0.5rem 0.5rem 0rem 0.5rem;
+  }
   .input-container {
     width: 37rem;
   }
@@ -653,6 +855,42 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  /* ---------cart----------- */
+  #products::-webkit-scrollbar:vertical {
+    width: 0.6rem;
+  }
+  .modalCart .cart {
+    width: 45%;
+  }
+  .cart .cart_top >button>img{
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .modalCart .cart_product {
+    padding: 0.5rem 0rem;
+  }
+  .cart .cart_top >h1{
+    font-size: 2em;
+  }
+  .cart .total>h2{
+    font-size: 1em;
+    line-height: 1rem;
+  }
+  .cart_product >figure>figcaption>h4{
+    font-size: 0.975em;
+  }
+  .cart >button,
+  .cart .empty_alert{
+    font-size: 0.8em;
+  }
+  .cart_product >figure>figcaption .price,
+  .cart_product >div{
+    font-size: 0.7em;
+  }
+  .cart_product >figure>figcaption .code,
+  .cart .total >p{
+    font-size: 0.6em;
+  }
   /* ------------------ */
   .navbar_logo {
     margin-top: 0.7rem;
@@ -868,6 +1106,17 @@ footer {
   }
 }
 @media screen and (max-width: 650px) {
+  .modalCart .cart {
+    width: 55%;
+  }
+  .cart >button {
+    margin: 0.25rem 0.5rem 0rem 0.5rem;
+  }
+  .cart_product >figure>figcaption>h4 {
+    line-height: 1rem;
+  }
+
+  /* -------------------------- */
   .navbar_items {
     display: none;
   }
@@ -963,6 +1212,25 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+  .modalCart .cart {
+    width: 70%;
+    height: 100%;
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+  .cart_product >figure>img {
+    width: 5rem;
+  }
+  .cart_product >figure>figcaption .code, 
+  .cart_product >figure>figcaption .price, 
+  .cart_product >div {
+    line-height: 1rem;
+  }
+  .cart_product >figure>figcaption .code{
+    margin-top:1px;
+  }
+  .cart .cart_top >h1{
+    font-size: 1.7em;
+  }
   header {
     height: 19rem;
   }
