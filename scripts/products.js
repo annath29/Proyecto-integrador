@@ -8,9 +8,9 @@ import { filtrarPorTipo } from '../module/functions_module.js';
 
 const buttonAll =document.getElementById("all_products");
 const buttonRing =document.getElementById("rings");
-const buttonNecklaces =document.getElementById("necklaces");
-const buttonEarrings =document.getElementById("earrings");
-const buttonBracelets =document.getElementById("bracelets");
+const buttonNecklace =document.getElementById("necklaces");
+const buttonEarring =document.getElementById("earrings");
+const buttonBracelet =document.getElementById("bracelets");
 
 const showCards =(products) =>{
     console.log(products,"products")
@@ -43,18 +43,22 @@ const showCards =(products) =>{
 
 
 const showAll = (button) =>{
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
         showCards(listaProductos);
     })
 }
 
-const showRings = (button) =>{
-    button.addEventListener("click", () => {
-        const filterRings=filtrarPorTipo(listaProductos,"ring")
-        showCards(filterRings);
+const showType = (button,term) =>{
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
+        const filterProducts=filtrarPorTipo(listaProductos,term);
+        showCards(filterProducts);
     })
 }
-
+showCards(listaProductos);
 showAll(buttonAll);
-
-showRings(buttonRing);
+showType(buttonRing,"ring");
+showType(buttonBracelet,"bracelet");
+showType(buttonEarring,"earring");
+showType(buttonNecklace,"Necklace");
