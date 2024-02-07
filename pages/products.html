@@ -92,7 +92,7 @@
       <section class="container_section_search">
         <h1>Our Products</h1>
         <div class="input-container">
-          <svg
+          <svg id="btn_search"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -120,7 +120,7 @@
               stroke-miterlimit="10"
             />
           </svg>
-          <input type="search" placeholder="Find jewelry you like" />
+          <input type="search"  id="search_product" placeholder="Find jewelry you like"/>
         </div>
       </section>
     </header>
@@ -148,8 +148,10 @@
             />
           </svg>
         </span>
-        <select class="sort_by">
-          <option value="val1">Sort by price</option>
+        <select class="sort_by" id="filter_products">
+          <option value=1>Sort by price</option>
+          <option value=2>Ascending</option>
+          <option value=3>Descending</option>
         </select>
       </section>
       <section class="products">

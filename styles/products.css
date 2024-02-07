@@ -623,6 +623,11 @@ footer {
   color:var(--negro);
 }
 
+/* ------------------------- */
+#btn_search{
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1240px) {
   main,
   footer {

@@ -14,7 +14,7 @@ export const buscarPorNombre = (productos, nombreBuscar) => {
 }
 
 // Función para ordenar productos por precio(ascendente y descendente)
-const ordenarPorPrecio=(productos, orden) =>{
+ export const ordenarPorPrecio=(productos, orden) =>{
     const copiaProductos = productos.slice();  
     if (orden === 'ascendente') {
       copiaProductos.sort((a, b) => a.precioUnitario - b.precioUnitario);
