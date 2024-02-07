@@ -127,11 +127,11 @@
     <main>
       <section class="container_buttons">
         <ul class="buttons">
-          <li id="All_products" class="btn_active"><a href="">All</a></li>
-          <li id="Rings"><a href="">Rings</a></li>
-          <li id="Bracelets"><a href="">Bracelets</a></li>
-          <li id="Necklaces"><a href="">Necklaces</a></li>
-          <li id="Earrings"><a href="" class="last_btn">Earrings</a></li>
+          <li id="all_products" class="btn_active"><a href="">All</a></li>
+          <li id="rings"><a href="">Rings</a></li>
+          <li id="bracelets"><a href="">Bracelets</a></li>
+          <li id="necklaces"><a href="">Necklaces</a></li>
+          <li id="earrings"><a href="" class="last_btn">Earrings</a></li>
         </ul>
         <span class="btn_filter">
           Filter
@@ -153,115 +153,8 @@
         </select>
       </section>
       <section class="products">
-        <section class="container_products">
-          <div class="cards">
-            <img
-              src="../assets/Catalogo/catalogo_producto1.png"
-              alt="Luxury Gems Necklace"
-            />
-            <h3>Luxury Gems Necklace</h3>
-            <p>$168.76</p>
-          </div>
-          <div class="cards">
-            <img
-              src="../assets/Catalogo/catalogo_producto2.png"
-              alt="Aurora Ring"
-            />
-            <h3>Aurora Ring</h3>
-            <p>$125.28</p>
-          </div>
-          <div class="cards">
-            <img
-              src="../assets/Catalogo/catalogo_producto3.png"
-              alt="Reflections Necklace"
-            />
-            <h3>Reflections Necklace</h3>
-            <p>$620.73</p>
-          </div>
-          <div class="cards">
-            <img
-              src="../assets/Catalogo/catalogo_producto4.png"
-              alt="Dreamy Infinity Ring"
-            />
-            <h3>Dreamy Infinity Ring</h3>
-            <p>$527.71</p>
-          </div>
-          <div class="cards">
-            <img
-              src="../assets/Catalogo/catalogo_producto5.png"
-              alt="Opulent Jewels Ring"
-            />
-            <h3>Opulent Jewels Ring</h3>
-            <p>$168.76</p>
-          </div>
-          <div class="cards">
-            <img
-              src="../assets/Catalogo/catalogo_producto6.png"
-              alt="Serene Solitaire Earrings"
-            />
-            <h3>Serene Solitaire Earrings</h3>
-            <p>$125.28</p>
-          </div>
-          <div class="cards">
-            <img
-              src="../assets/Catalogo/catalogo_producto7.png"
-              alt="Timeless Halo Earrings"
-            />
-            <h3>Timeless Halo Earrings</h3>
-            <p>$620.73</p>
-          </div>
-          <div class="cards">
-            <img
-              src="../assets/Catalogo/catalogo_producto8.png"
-              alt="Exquisite Earrings"
-            />
-            <h3>Exquisite Earrings</h3>
-            <p>$527.71</p>
-          </div>
-        </section>
-        <section class="container_products big_cards">
-          <div class="cards big_card">
-            <img
-              src="../assets/Catalogo/catalogo_producto_img_grande.png"
-              alt="Timeless Elegance Ring"
-            />
-            <h3>Timeless Elegance Ring</h3>
-            <p>$168.76</p>
-          </div>
-          <div class="cards_group">
-            <div class="cards">
-              <img
-                src="../assets/Catalogo/catalogo_producto9.png"
-                alt="Luxury Charms Ring"
-              />
-              <h3>Luxury Charms Ring</h3>
-              <p>$620.73</p>
-            </div>
-            <div class="cards">
-              <img
-                src="../assets/Catalogo/catalogo_producto10.png"
-                alt="Blissful Bloom Ring"
-              />
-              <h3>Blissful Bloom Ring</h3>
-              <p>$620.73</p>
-            </div>
-            <div class="cards">
-              <img
-                src="../assets/Catalogo/catalogo_producto11.png"
-                alt="Sparkling Ring "
-              />
-              <h3>Sparkling Ring</h3>
-              <p>$620.73</p>
-            </div>
-            <div class="cards">
-              <img
-                src="../assets/Catalogo/catalogo_producto12.png"
-                alt="Glimmering Ring"
-              />
-              <h3>Glimmering Ring</h3>
-              <p>$620.73</p>
-            </div>
-          </div>
+        <section id="container_products" class="container_products">
+          <!-- aqui se cargan los productos -->
         </section>
       </section>
       <section class="pagination">
@@ -488,7 +381,8 @@
         </section>  
       </section>
     </footer>
-    <script type="module" src="../module/modalCart.js"></script>
-    <script src="../scripts/products.js"></script>
+    <script src="../module/products_module.js"></script>
+    <script src="../scripts/modalCart.js"></script>
+    <script type="module" src="../scripts/products.js"></script>
   </body>
 </html>

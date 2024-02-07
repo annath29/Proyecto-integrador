@@ -33,7 +33,7 @@ const ordenarPorPrecio=(productos, orden) =>{
       copiaProductos.sort((a, b) => b.precioUnitario - a.precioUnitario);
     }
     return copiaProductos;
-  }
+}
   
   const productosOrdenadosAscendente = ordenarPorPrecio(listaProductos, 'ascendente');
   console.log('Productos ordenados por precio ascendente:', productosOrdenadosAscendente);
