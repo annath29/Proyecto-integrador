@@ -42,7 +42,7 @@ const productsCart = [
     //     cantidad:2,
     //   },
 ]
-const showCart = (button) => {
+export const showCart = (button) => {
   button.addEventListener("click", () => {
     createModal(productsCart);
   });
