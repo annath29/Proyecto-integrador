@@ -1,10 +1,11 @@
 // alert("conect js products")
 
-import { listaProductos } from "../module/products_module.js";
+// import { listaProductos } from "../module/products_module.js";
 import { filtrarPorTipo, buscarPorNombre } from "../module/functions_module.js";
+import { getAll } from "../module/functions_fetch.js";
 
 // const prod=[]
-
+let listaProductos = await getAll();
 const buttonAll = document.getElementById("all_products");
 const buttonRing = document.getElementById("rings");
 const buttonNecklace = document.getElementById("necklaces");
