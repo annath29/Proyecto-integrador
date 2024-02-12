@@ -124,67 +124,141 @@
             <path d="M16.2858 3.42847C14.4858 3.42847 12.943 4.37132 12.0001 5.74275C11.0572 4.37132 9.51439 3.42847 7.71439 3.42847C4.88582 3.42847 2.57153 5.74275 2.57153 8.57132C2.57153 13.7142 12.0001 21.4285 12.0001 21.4285C12.0001 21.4285 21.4287 13.7142 21.4287 8.57132C21.4287 5.74275 19.1144 3.42847 16.2858 3.42847Z" stroke="#171A1F" stroke-width="2.05714" stroke-miterlimit="10" stroke-linecap="square"/>
           </svg>
         </figure> -->
+        <aside class="description_buy_product">
+          <h1>Luxury Charms Ring</h1>
+          <p>Code: 78205</p>
+          <h1 class="price">$620.73</h1>
+          <form id="formAddProduct">
+            <fieldset class="colors">
+              <legend class="subtitle">Color - Rose Gold</legend>
+              <section>
+                <input class="active_color" type="checkbox" id="color1" name="color1" value="color1">  
+                <input type="checkbox" id="color2" name="color2" value="color2">  
+              </section>
+            </fieldset>
+            <fieldset class="sizes">
+              <legend>
+                  <p class="subtitle">Size - 48</p>
+                  <a>What is my size?</a>
+              </legend>
+              <section>
+                <input class="active_size" type="button" id="size1" name="size1" value="48">  
+                <input type="button" id="size2" name="size2" value="50">  
+                <!-- <a href="">52</a>
+                <a href="">54</a>
+                <a href="">56</a>
+                <a href="">58</a>
+                <a href="">60</a>
+                <a href="">62</a>
+                <a href="">64</a>
+                <a href="">66</a>
+                <a href="">68</a>
+                <a href="">70</a> -->
+              </div>
+            </fieldset>
+            <fieldset class="quantity">
+              <legend class="subtitle">Quantity</legend>
+              <section>
+                <button>-</button>
+                <input disabled type="number" id="quantity" name="quantity" value="0" min="0" max="100" step="1" readonly onkeydown="return true;"> 
+                <button>+</button>
+              </section>
+            </fieldset>
+            <section class="buttons">
+              <button id="btn_add_cart">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                >
+                  <path
+                    d="M11.5 9H13.5L13.5 6L16.5 6V4L13.5 4L13.5 1L11.5 1L11.5 4L8.5 4L8.5 6L11.5 6L11.5 9ZM7.5 18C6.4 18 5.51 18.9 5.51 20C5.51 21.1 6.4 22 7.5 22C8.6 22 9.5 21.1 9.5 20C9.5 18.9 8.6 18 7.5 18ZM17.5 18C16.4 18 15.51 18.9 15.51 20C15.51 21.1 16.4 22 17.5 22C18.6 22 19.5 21.1 19.5 20C19.5 18.9 18.6 18 17.5 18ZM7.67 14.75L7.7 14.63L8.6 13L16.05 13C16.8 13 17.46 12.59 17.8 11.97L21.66 4.96L19.92 4H19.91L18.81 6L16.05 11L9.03 11L8.9 10.73L6.66 6L5.71 4L4.77 2L1.5 2L1.5 4L3.5 4L7.1 11.59L5.75 14.04C5.59 14.32 5.5 14.65 5.5 15C5.5 16.1 6.4 17 7.5 17L19.5 17V15L7.92 15C7.79 15 7.67 14.89 7.67 14.75Z"
+                    fill="#0D554A"
+                  />
+                </svg>
+                Add to bag
+              </button>
+              <button id="btn_buy" class="button_active">Buy now</button>
+            </section>
+          </form>
+          <section class="selects">
+            <select name="" id="">
+              <option value="val1">Delivery</option>
+            </select>
+            <select name="" id="">
+              <option value="val1">Payment</option>
+            </select>
+            <select name="" id="">
+              <option value="val1">Warranty</option>
+            </select>
+            <select name="" id="">
+              <option value="val1">Care</option>
+            </select>
+          </section>
+        </aside>
         <!-- <aside class="description_buy_product">
           <h1>Luxury Charms Ring</h1>
           <p>Code: 78205</p>
           <h1 class="price">$620.73</h1>
-          <section class="colors">
-            <p class="subtitle">Color - Rose Gold</p>
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-                    <circle cx="18" cy="18" r="17" fill="#E6AE87" stroke="#0D554A" stroke-width="2"/>
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-                    <circle cx="18" cy="18" r="17.5" fill="#DEE1E6" stroke="#DEE1E6"/>
-                  </svg>
-            </div>
-          </section>
-          <section class="sizes">
-            <section>
-                <p class="subtitle">Size - 48</p>
-                <a>What is my size?</a>
+          <form id="formAddProduct">
+            <section class="colors">
+              <p class="subtitle">Color - Rose Gold</p>
+              <section>
+                  <button class="active_color">
+                  </button>
+                  <button>
+                  </button>
+              </section>
             </section>
-            <div>
-              <a class="active_size" href="">48</a>
-              <a href="">50</a>
-              <a href="">52</a>
-              <a href="">54</a>
-              <a href="">56</a>
-              <a href="">58</a>
-              <a href="">60</a>
-              <a href="">62</a>
-              <a href="">64</a>
-              <a href="">66</a>
-              <a href="">68</a>
-              <a href="">70</a>
-            </div>
-          </section>
-          <section class="quantity">
-            <p class="subtitle">Quantity</p>
-            <div>
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-            </div>
-          </section>
-          <section class="buttons">
-            <button id="btn_add_cart">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="24"
-                viewBox="0 0 25 24"
-                fill="none"
-              >
-                <path
-                  d="M11.5 9H13.5L13.5 6L16.5 6V4L13.5 4L13.5 1L11.5 1L11.5 4L8.5 4L8.5 6L11.5 6L11.5 9ZM7.5 18C6.4 18 5.51 18.9 5.51 20C5.51 21.1 6.4 22 7.5 22C8.6 22 9.5 21.1 9.5 20C9.5 18.9 8.6 18 7.5 18ZM17.5 18C16.4 18 15.51 18.9 15.51 20C15.51 21.1 16.4 22 17.5 22C18.6 22 19.5 21.1 19.5 20C19.5 18.9 18.6 18 17.5 18ZM7.67 14.75L7.7 14.63L8.6 13L16.05 13C16.8 13 17.46 12.59 17.8 11.97L21.66 4.96L19.92 4H19.91L18.81 6L16.05 11L9.03 11L8.9 10.73L6.66 6L5.71 4L4.77 2L1.5 2L1.5 4L3.5 4L7.1 11.59L5.75 14.04C5.59 14.32 5.5 14.65 5.5 15C5.5 16.1 6.4 17 7.5 17L19.5 17V15L7.92 15C7.79 15 7.67 14.89 7.67 14.75Z"
-                  fill="#0D554A"
-                />
-              </svg>
-              Add to bag
-            </button>
-            <button id="btn_buy" class="button_active">Buy now</button>
-          </section>
+            <section class="sizes">
+              <section>
+                  <p class="subtitle">Size - 48</p>
+                  <a>What is my size?</a>
+              </section>
+              <div>
+                <a class="active_size" href="">48</a>
+                <a href="">50</a>
+                <a href="">52</a>
+                <a href="">54</a>
+                <a href="">56</a>
+                <a href="">58</a>
+                <a href="">60</a>
+                <a href="">62</a>
+                <a href="">64</a>
+                <a href="">66</a>
+                <a href="">68</a>
+                <a href="">70</a>
+              </div>
+            </section>
+            <section class="quantity">
+              <p class="subtitle">Quantity</p>
+              <div>
+                  <button>-</button>
+                  <span>1</span>
+                  <button>+</button>
+              </div>
+            </section>
+            <section class="buttons">
+              <button id="btn_add_cart">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                >
+                  <path
+                    d="M11.5 9H13.5L13.5 6L16.5 6V4L13.5 4L13.5 1L11.5 1L11.5 4L8.5 4L8.5 6L11.5 6L11.5 9ZM7.5 18C6.4 18 5.51 18.9 5.51 20C5.51 21.1 6.4 22 7.5 22C8.6 22 9.5 21.1 9.5 20C9.5 18.9 8.6 18 7.5 18ZM17.5 18C16.4 18 15.51 18.9 15.51 20C15.51 21.1 16.4 22 17.5 22C18.6 22 19.5 21.1 19.5 20C19.5 18.9 18.6 18 17.5 18ZM7.67 14.75L7.7 14.63L8.6 13L16.05 13C16.8 13 17.46 12.59 17.8 11.97L21.66 4.96L19.92 4H19.91L18.81 6L16.05 11L9.03 11L8.9 10.73L6.66 6L5.71 4L4.77 2L1.5 2L1.5 4L3.5 4L7.1 11.59L5.75 14.04C5.59 14.32 5.5 14.65 5.5 15C5.5 16.1 6.4 17 7.5 17L19.5 17V15L7.92 15C7.79 15 7.67 14.89 7.67 14.75Z"
+                    fill="#0D554A"
+                  />
+                </svg>
+                Add to bag
+              </button>
+              <button id="btn_buy" class="button_active">Buy now</button>
+            </section>
+          </form>
           <section class="selects">
             <select name="" id="">
               <option value="val1">Delivery</option>
@@ -200,6 +274,7 @@
             </select>
           </section>
         </aside> -->
+        
       </section>
       
       <section id="video" class="container_video_description">
@@ -578,6 +653,6 @@
     </footer>
     <script type="module" src="../module/functions_fetch.js"></script>
     <script type="module" src="../scripts/modalCart.js"></script>
-    <script type="module" src="../scripts/details.js"></script>
+    <!-- <script type="module" src="../scripts/details.js"></script> -->
   </body>
 </html>
