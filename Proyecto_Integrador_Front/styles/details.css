@@ -265,8 +265,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../assets/Details/details_video.png);
+    /* background: url(../assets/Details/details_video.png); */
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     border-radius: 0.5rem;
 }

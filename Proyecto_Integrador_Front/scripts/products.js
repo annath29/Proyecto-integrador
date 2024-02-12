@@ -86,6 +86,19 @@ showType(buttonBracelet, "bracelet");
 showType(buttonEarring, "earring");
 showType(buttonNecklace, "Necklace");
 
+const botones = document.querySelectorAll('.buttons li');
+
+botones.forEach(boton => {
+  boton.addEventListener('click', () => {
+    botones.forEach(b => {
+      b.classList.remove('btn_active');
+    });
+    boton.classList.add('btn_active');
+  });
+});
+
+
+
 /**const selectElement = document.getElementById("filter_products");
 
 console.log("Texto seleccionado:", selectedText);

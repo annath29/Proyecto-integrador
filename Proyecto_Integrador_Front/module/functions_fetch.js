@@ -4,7 +4,7 @@ export const getAll = async () => {
   try {
     const promesa = await fetch(url);
     const respuesta = await promesa.json();
-    // console.log("rptaAll:", respuesta);
+    console.log("rptaAll:", respuesta);
     return respuesta;
   } catch (error) {
     console.log("Error: ", error);
@@ -15,7 +15,7 @@ export const getById = async (id) => {
   try {
     const promesa = await fetch(`${url}?id=${id}`);
     const respuesta = await promesa.json();
-    // console.log("rptaid:", respuesta);
+    console.log("rptaid:", respuesta[0]);
     if (!respuesta.length == 0) {
       return respuesta[0];
     } else {
@@ -26,6 +26,6 @@ export const getById = async (id) => {
   }
 };
 // getById(0);
-// getById(1);
+getById(1);
 
-// getAll()
+getAll()
