@@ -1,69 +1,72 @@
 const buttonCart = document.getElementById("btn_cart");
 
-// const productsCart = [
-//       {
-//           id: 1,
-//           nombre: "Luxury Charms Ring",
-//           codigo: "78205",
-//           precioUnitario: 620.73,
-//           tipoAccesorio: "anillo",
-//           imagenes: ["../assets/Joyas/Selection 1.png", "anillo_oro_2.jpg"],
-//           descripcion: "Anillo elegante de oro con diseño único.",
-//           cantidad:1,
-//         },
-//         {
-//           id: 2,
-//           nombre: "Exquisite Earrings",
-//           codigo: "92701",
-//           precioUnitario: 125.28,
-//           tipoAccesorio: "arete",
-//           imagenes: ["../assets/Productos/Producto2.png", "arete_oro_2.jpg"],
-//           descripcion: "Arete en oro con cierre magnético.",
-//           cantidad:2,
-//         },
-//     //   {
-//     //       id: 1,
-//     //       nombre: "Luxury Charms Ring",
-//     //       codigo: "78205",
-//     //       precioUnitario: 620.73,
-//     //       tipoAccesorio: "anillo",
-//     //       imagenes: ["../assets/Joyas/Selection 1.png", "anillo_oro_2.jpg"],
-//     //       descripcion: "Anillo elegante de oro con diseño único.",
-//     //       cantidad:1,
-//     //     },
-//     //     {
-//     //       id: 2,
-//     //       nombre: "Exquisite Earrings",
-//     //       codigo: "92701",
-//     //       precioUnitario: 125.28,
-//     //       tipoAccesorio: "arete",
-//     //       imagenes: ["../assets/Productos/Producto2.png", "arete_oro_2.jpg"],
-//     //       descripcion: "Arete en oro con cierre magnético.",
-//     //       cantidad:2,
-//     //     },
-    
-// ]
 const productsCart = [
-    {
-      idProduct: 1,
-      especificaciones:{
-        cantidad:2,
-        talla:"m",
-        color:"dorado",
-        cantidad,
-      }
-    },
-    {
-      idProduct: 1,
-      especificaciones:{
-        cantidad:2,
-        talla:"m",
-        color:"dorado",
-        cantidad,
-      }
-    }
+      {
+          id: 1,
+          nombre: "Luxury Charms Ring",
+          codigo: "78205",
+          precioUnitario: 620.73,
+          tipoAccesorio: "anillo",
+          imagenes: ["../assets/Joyas/Selection 1.png", "anillo_oro_2.jpg"],
+          descripcion: "Anillo elegante de oro con diseño único.",
+          cantidad:1,
+        },
+        {
+          id: 2,
+          nombre: "Exquisite Earrings",
+          codigo: "92701",
+          precioUnitario: 125.28,
+          tipoAccesorio: "arete",
+          imagenes: ["../assets/Productos/Producto2.png", "arete_oro_2.jpg"],
+          descripcion: "Arete en oro con cierre magnético.",
+          cantidad:2,
+        },
+      {
+          id: 1,
+          nombre: "Luxury Charms Ring",
+          codigo: "78205",
+          precioUnitario: 620.73,
+          tipoAccesorio: "anillo",
+          imagenes: ["../assets/Joyas/Selection 1.png", "anillo_oro_2.jpg"],
+          descripcion: "Anillo elegante de oro con diseño único.",
+          cantidad:1,
+        },
+        {
+          id: 2,
+          nombre: "Exquisite Earrings",
+          codigo: "92701",
+          precioUnitario: 125.28,
+          tipoAccesorio: "arete",
+          imagenes: ["../assets/Productos/Producto2.png", "arete_oro_2.jpg"],
+          descripcion: "Arete en oro con cierre magnético.",
+          cantidad:2,
+        },
     
 ]
+// const productsCart = [
+//     {
+//       idProduct: 1,
+//       especificaciones:{
+//         cantidad:2,
+//         talla:"m",
+//         color:"dorado",
+//         cantidad,
+//       }
+//     },
+//     {
+//       idProduct: 1,
+//       especificaciones:{
+//         cantidad:2,
+//         talla:"m",
+//         color:"dorado",
+//         cantidad,
+//       }
+//     }
+    
+// ]
+
+
+
 export const showCart = (button) => {
   button.addEventListener("click", () => {
     createModal(productsCart);
@@ -79,6 +82,7 @@ const createModal = (products) => {
     const modal = document.createElement("div");
     modal.id = "modal";
     modal.className = "modalCart";
+
     if (products.length === 0) {
         modal.innerHTML=`
         <section class="cart">

@@ -186,7 +186,7 @@ main {
 }
 
 .sizes >section>input[type="button"].active_size {
-    border: 2px solid var(--activeSize);
+    border: 1px solid var(--activeSize);
     font-weight: bold;
     color: var(--activeSize);
 }
