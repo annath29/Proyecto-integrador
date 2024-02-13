@@ -13,6 +13,45 @@ import { getById } from "../module/functions_fetch.js";
 //       showCart(btnAdd);
 //   });
 
+const changeSize =(selectedColorInput) =>{
+
+  if (selectedColorInput) {
+    console.log("acceder a las tallas",product.stock[`${selectedColorInput.value}`].talla)
+    const sizeSection = document.getElementById("sizeSection");
+    let sizesHtml=``
+    let count2=1;       
+    const tallas = product.stock[`${selectedColorInput.value}`].talla;
+    for (const tallaKey in tallas) {
+      sizesHtml += `
+      <input class="${count2 === 1 ? 'active_size' : ''}" type="button" id="size${count2}" name="size" value="${tallaKey}"  ${count2 === 1 ? 'checked' : '' } >
+      `;
+
+      const value = tallas[tallaKey];
+      console.log(tallaKey, "=", value);
+      count2++;
+    }
+    sizeSection.innerHTML= sizesHtml;
+  }
+}
+
+
+// Funcion para cmbiar el estado activo de la talla y el color
+const changeState = (elementos,clase) =>{
+  elementos.forEach((elemento) => {
+    elemento.addEventListener("click", () => {
+      elementos.forEach((elem) => {
+        elem.classList.remove(clase);
+        elem.checked=false;
+      });
+      elemento.classList.add(clase);
+      elemento.checked=true;
+      changeSize(elemento);
+      // const subtitle = document.querySelector("#subtitleColor");
+      // subtitle.innerHTML = `Color: ${elemento.value}`;
+    });
+  });
+};
+
 //trae el id de la pagina de products mediantge el local storage
 const idProduct = localStorage.getItem("id_product");
 //  console.log(product,"product")
@@ -53,9 +92,8 @@ const showContent = (product) => {
           <h1 class="price">$${product.precioUnitario}</h1>
           <form id="formAddProduct">
             <fieldset class="colors">
-              <legend class="subtitle">Color - Rose Gold</legend>
+              <legend id="subtitleColor"class="subtitle"></legend>
               <section id="colorSection">
-                
               </section>
             </fieldset>
             <fieldset class="sizes">
@@ -63,9 +101,7 @@ const showContent = (product) => {
                   <p class="subtitle">Size - 48</p>
                   <a>What is my size?</a>
               </legend>
-              <section>
-                <input class="active_size" type="button" id="size1" name="size1" value="48">  
-                <input type="button" id="size2" name="size2" value="50">  
+              <section id="sizeSection">
               </div>
             </fieldset>
             <fieldset class="quantity">
@@ -142,12 +178,13 @@ const showContent = (product) => {
     </figure>
     `;
 
+    //pone en el cotnenedor del video la imagen en el background dinamica
     const figureVideo = document.getElementById("videoFigure");
     console.log(product.imagenes[0]);
     figureVideo.style.backgroundImage = "url(" + product.imagenes[0] + ")";
 
+    //crea la seccion de las imagenes pequenas dinamicamente
     const otherImagesSection = document.querySelector(".other_images");
-
     for (let i = 0; i < product.imagenes.length; i++) {
       const img = document.createElement("img");
       img.src = product.imagenes[i];
@@ -158,52 +195,57 @@ const showContent = (product) => {
       otherImagesSection.appendChild(img);
     }
 
+    //cambia la imagen principal segun a que imagen pequeña se le de click
     const imagenes = document.querySelectorAll(".other_images img");
     const imagenPrincipal = document.querySelector(".img_main");
     imagenes.forEach((imagen) => {
       imagen.addEventListener("click", () => {
         imagenes.forEach((img) => {
-          console.log(img);
           img.classList.remove("img_active");
-          imagenPrincipal.src = imagen.src;
         });
+        imagenPrincipal.src = imagen.src;
         imagen.classList.add("img_active");
       });
     });
 
+    //pintar los colores segun el producto
     const colorSection = document.getElementById("colorSection");
-    const stock = product.stock;
     let colorsHtml=``
+    let count = 1; 
+    const stock = product.stock;
+    //pintar los inputs de colores
     for (const key in stock) {
-      if (Object.hasOwnProperty.call(stock, key)) {
-        const value = stock[key];
-        colorsHtml+=`
-        <div>
-          <p>${key} </p>
-          <p>colores:${stock[key].color} </p>
-          <!--  <p>tallas:{${stock[key].talla}}-->
-          <ul>
-        `
-        ;
-        const tallas = stock[key].talla;
-        for (const tallaKey in tallas) {
-          if (Object.hasOwnProperty.call(tallas, tallaKey)) {
-            colorsHtml += `<li>${tallaKey}: ${tallas[tallaKey]}</li>`;
-          }
-        }
-        colorsHtml += `
-          </ul>
-        </div>
-        `;
-        console.log(key, "=", value);
-      }
+      colorsHtml+=`
+        <input class="${count === 1 ? 'active_color' : ''}" type="radio" id="color${count}" name="color" value="${key}"  ${count === 1 ? 'checked' : '' } >  
+      `;
+      count++;
+      // const value = stock[key];
+      // console.log(key, "=", value);
     }
+   
     colorSection.innerHTML= colorsHtml;
-
-    const activeColorInput = document.querySelector(".active_color");
-    if (activeColorInput) {
-      activeColorInput.checked = true;
+    //modificar el background del input segun el color
+    count=1;
+    for (const key in stock) {
+      let color=document.getElementById("color"+count)
+      color.style.backgroundColor = stock[key].color;
+      // console.log("color",color)
+      count++;
     }
+    
+    const colorsInput = document.querySelectorAll('input[type="radio"][name="color"]');
+    console.log("colorinput",colorsInput);
+    changeState(colorsInput,"active_color");
+
+    const selectedInputColor= document.querySelector('input[type="radio"][name="color"]:checked');
+    if(selectedInputColor){
+      const subtitleColor = document.querySelector("#subtitleColor");
+      subtitleColor.innerHTML = `Color: ${selectedInputColor.value}`;
+      changeSize(selectedInputColor);
+    }
+  }
+};
+showContent(product);
 
     // products.forEach((product) => {
     //   const imgProduct = document.getElementById(`img_product${product.id}`);
@@ -212,6 +254,4 @@ const showContent = (product) => {
     //     window.location.href = "../pages/details.html";
     //   });
     // });
-  }
-};
-showContent(product);
+
