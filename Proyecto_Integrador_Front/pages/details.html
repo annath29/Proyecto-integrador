@@ -124,7 +124,7 @@
             <path d="M16.2858 3.42847C14.4858 3.42847 12.943 4.37132 12.0001 5.74275C11.0572 4.37132 9.51439 3.42847 7.71439 3.42847C4.88582 3.42847 2.57153 5.74275 2.57153 8.57132C2.57153 13.7142 12.0001 21.4285 12.0001 21.4285C12.0001 21.4285 21.4287 13.7142 21.4287 8.57132C21.4287 5.74275 19.1144 3.42847 16.2858 3.42847Z" stroke="#171A1F" stroke-width="2.05714" stroke-miterlimit="10" stroke-linecap="square"/>
           </svg>
         </figure> -->
-        <aside class="description_buy_product">
+        <!-- <aside class="description_buy_product">
           <h1>Luxury Charms Ring</h1>
           <p>Code: 78205</p>
           <h1 class="price">$620.73</h1>
@@ -132,8 +132,8 @@
             <fieldset class="colors">
               <legend class="subtitle">Color - Rose Gold</legend>
               <section>
-                <input class="active_color" type="checkbox" id="color1" name="color1" value="color1">  
-                <input type="checkbox" id="color2" name="color2" value="color2">  
+                <input checked class="active_color" type="radio" id="color1" name="color" value="color1">  
+                <input type="radio" id="color2" name="color" value="color2">  
               </section>
             </fieldset>
             <fieldset class="sizes">
@@ -142,26 +142,16 @@
                   <a>What is my size?</a>
               </legend>
               <section>
-                <input class="active_size" type="button" id="size1" name="size1" value="48">  
-                <input type="button" id="size2" name="size2" value="50">  
-                <!-- <a href="">52</a>
-                <a href="">54</a>
-                <a href="">56</a>
-                <a href="">58</a>
-                <a href="">60</a>
-                <a href="">62</a>
-                <a href="">64</a>
-                <a href="">66</a>
-                <a href="">68</a>
-                <a href="">70</a> -->
+                <input checked class="active_size" type="radio" id="size1" name="size" value="48">  
+                <input type="radio" id="size2" name="size" value="50">  
               </div>
             </fieldset>
             <fieldset class="quantity">
               <legend class="subtitle">Quantity</legend>
               <section>
-                <button>-</button>
-                <input disabled type="number" id="quantity" name="quantity" value="0" min="0" max="100" step="1" readonly onkeydown="return true;"> 
-                <button>+</button>
+                <button id="decrement" type="button">-</button>
+                <input  type="number" id="quantity" name="quantity" value="0" min="0" max="100" step="1" readonly onkeydown="return true;"> 
+                <button id="increment" type="button">+</button>
               </section>
             </fieldset>
             <section class="buttons">
@@ -182,8 +172,8 @@
               </button>
               <button id="btn_buy" class="button_active">Buy now</button>
             </section>
-          </form>
-          <section class="selects">
+          </form> -->
+          <!--<section class="selects">
             <select name="" id="">
               <option value="val1">Delivery</option>
             </select>
@@ -197,7 +187,7 @@
               <option value="val1">Care</option>
             </select>
           </section>
-        </aside>
+        </aside>-->
         <!-- <aside class="description_buy_product">
           <h1>Luxury Charms Ring</h1>
           <p>Code: 78205</p>
@@ -653,6 +643,7 @@
     </footer>
     <script type="module" src="../module/functions_fetch.js"></script>
     <script type="module" src="../scripts/modalCart.js"></script>
-    <!-- <script type="module" src="../scripts/details.js"></script> -->
+    <!-- <script type="module" src="../scripts/validacionesForm.js"></script> -->
+    <script type="module" src="../scripts/details.js"></script>
   </body>
 </html>
