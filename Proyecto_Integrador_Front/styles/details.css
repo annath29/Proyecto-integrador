@@ -142,6 +142,8 @@ main {
 }
 
 .subtitle {
+    font-size: 1em;
+    font-family: var(--tipo-secundaria);
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--grisSubtitulos);

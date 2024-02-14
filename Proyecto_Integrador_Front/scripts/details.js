@@ -1,63 +1,132 @@
 import { showCart } from "./modalCart.js";
 import { getById } from "../module/functions_fetch.js";
 
-// const btnBuy = document.getElementById("btn_buy");
-// const btnAdd = document.getElementById("btn_add_cart");
-// btnBuy.addEventListener("click", () => {
-//       // localStorage.setItem("id_product", product.id);
-//     //  debe añadir los productos al carrito para recibirlos en order
-//     window.location.href = "../pages/order.html";
-//   });
-// btnAdd.addEventListener("click", () => {
-//   //  debe añadir los productos al carrito
-//       showCart(btnAdd);
-//   });
+// const changeSize =(selectedColorInput) =>{
+//   console.log("acceder a las tallas",product.stock[`${selectedColorInput.value}`].talla)
+//   const sizeSection = document.getElementById("sizeSection");
+//   let sizesHtml=``
+//   let count2=1;       
+//   const tallas = product.stock[`${selectedColorInput.value}`].talla;
+//   for (const tallaKey in tallas) {
+//     sizesHtml += `
+//       <div>
+//         <input class="${count2 === 1 ? 'active_size' : ''}" type="radio" id="size${count2}" name="size" value="${tallaKey}"  ${count2 === 1 ? 'checked' : '' } >
+//         <label class="${count2 === 1 ? 'active' : ''}">${tallaKey}</label>
+//       </div>
+//     `;
 
-const changeSize =(selectedColorInput) =>{
-  console.log("acceder a las tallas",product.stock[`${selectedColorInput.value}`].talla)
-  const sizeSection = document.getElementById("sizeSection");
-  let sizesHtml=``
-  let count2=1;       
-  const tallas = product.stock[`${selectedColorInput.value}`].talla;
-  for (const tallaKey in tallas) {
-    sizesHtml += `
-      <div>
-        <input class="${count2 === 1 ? 'active_size' : ''}" type="radio" id="size${count2}" name="size" value="${tallaKey}"  ${count2 === 1 ? 'checked' : '' } >
-        <label class="${count2 === 1 ? 'active' : ''}">${tallaKey}</label>
-      </div>
-    `;
+//     const value = tallas[tallaKey];
+//     console.log(tallaKey, "=", value);
+//     count2++;
+//   }
+//   sizeSection.innerHTML= sizesHtml;
 
-    const value = tallas[tallaKey];
-    console.log(tallaKey, "=", value);
-    count2++;
-  }
-  sizeSection.innerHTML= sizesHtml;
+//   const sizesInput = document.querySelectorAll('input[type="radio"][name="size"]');
+//   console.log("sizesinput",sizesInput);
+//   changeState(sizesInput,"active_size");
+//   changeSubtitle(sizesInput,"Size")
+//   // sizesInput.forEach(element => {
+//   //   element.addEventListener("click", () => {
+//   //     const subtitleSize = document.querySelector(`#subtitleSize`);
+//   //     subtitleSize.innerHTML = `Size: ${element.value}`; 
+//   //   });
+//   // });
 
-  const sizesInput = document.querySelectorAll('input[type="radio"][name="size"]');
-  console.log("sizesinput",sizesInput);
-  changeState(sizesInput,"active_size");
-  changeSubtitle(sizesInput,"Size")
-  // sizesInput.forEach(element => {
-  //   element.addEventListener("click", () => {
-  //     const subtitleSize = document.querySelector(`#subtitleSize`);
-  //     subtitleSize.innerHTML = `Size: ${element.value}`; 
-  //   });
-  // });
+//
 
+const changeQuantity=(quantityInput)=>{
+  const decrementBtn = document.getElementById("decrement");
+  const incrementBtn = document.getElementById("increment");
+    decrementBtn.addEventListener("click", (e) => {
+      e.preventDefault()
+      const currentValue = parseInt(quantityInput.value);
+      console.log("actual",currentValue);
+      if (currentValue > 0) {
+        quantityInput.value = currentValue - 1;
+      }
+    });
+
+    incrementBtn.addEventListener("click", (e) => {
+      e.preventDefault()
+      const currentValue = parseInt(quantityInput.value);
+      const maxValue = parseInt(quantityInput.max);
+      if (currentValue < maxValue) {
+        quantityInput.value = currentValue + 1;
+      }
+    });
 }
 
-const changeSubtitle = (input,subtitle) =>{
-  input.forEach((element,index) => {
+const changeSize = (selectedColorInput) => {
+  const selectedStock = product.stock[`${selectedColorInput.value}`];
+  if (selectedStock && selectedStock.talla) {
+    console.log("acceder a las tallas", selectedStock.talla);
+    const sizeSection = document.getElementById("sizeSection");
+    let sizesHtml = ``;
+    let count2 = 1;
+    const sizes = selectedStock.talla;
+    for (const sizeKey in sizes) {
+      sizesHtml += `
+        <div>
+          <input class="${count2 === 1 ? 'active_size' : ''}" type="radio" id="size${count2}" name="size" value="${sizeKey}"  ${count2 === 1 ? 'checked' : '' } >
+          <label class="${count2 === 1 ? 'active' : ''}">${sizeKey}</label>
+        </div>
+      `;
+  
+      const value = sizes[sizeKey];
+      console.log(sizeKey, "=", value);
+      count2++;
+    }
+    sizeSection.innerHTML= sizesHtml;
+    
+    const sizesInput = document.querySelectorAll('input[type="radio"][name="size"]');
+    console.log("sizesinput",sizesInput);
+    changeState(sizesInput,"active_size");
+    changeSubtitle(sizesInput,"Size", false); 
+
+    const quantityInput = document.getElementById("quantity");
+    sizesInput.forEach((size,index)=>{
+      if(index==0){
+        quantityInput.value=0
+      }
+      size.addEventListener("click", () => {
+        // changeQuantity(quantityInput)
+        const selectedSize = size.value;
+        quantityInput.max = selectedStock.talla[selectedSize];
+        console.log(quantityInput.max)
+        quantityInput.value = 0;
+      });
+    });
+    
+    const selectedSizeInput = document.querySelector('input[type="radio"][name="size"]:checked');
+    if (selectedSizeInput) {
+      const selectedSize = selectedSizeInput.value;
+      quantityInput.max = selectedStock.talla[selectedSize];
+      console.log(quantityInput.max);
+    }
+
+  } else {
+    console.error("No se encontró stock para el color seleccionado.");
+  }
+};
+
+
+
+const changeSubtitle = (inputs,subtitle, callChangeSize = true) =>{
+  inputs.forEach((element,index) => {
     if(index==0){
       console.log("ingreso al index")
       const subtitleElement = document.querySelector(`#subtitle${subtitle}`);
       subtitleElement.innerHTML = `${subtitle}: ${element.value}`; 
-      changeSize(element);
+      if (callChangeSize) {
+        changeSize(element);
+      }
     }
     element.addEventListener("click", () => {
       const subtitleElement = document.querySelector(`#subtitle${subtitle}`);
       subtitleElement.innerHTML = `${subtitle}: ${element.value}`; 
-      changeSize(element);
+      if (callChangeSize) {
+        changeSize(element);
+      }
     });
   });
 }
@@ -131,10 +200,10 @@ const showContent = (product) => {
             </fieldset>
             <fieldset class="quantity">
               <legend class="subtitle">Quantity</legend>
-              <section>
-                <button>-</button>
-                <input disabled type="number" id="quantity" name="quantity" value="0" min="0" max="100" step="1" readonly onkeydown="return true;"> 
-                <button>+</button>
+              <section id="quantitySection">
+              <button id="decrement">-</button>
+              <input type="number" id="quantity" name="quantity" value="0" min="0" max="100"> 
+              <button id="increment">+</button>
               </section>
             </fieldset>
             <section class="buttons">
@@ -263,10 +332,16 @@ const showContent = (product) => {
     changeState(colorsInput,"active_color");
     changeSubtitle(colorsInput,"Color");
 
-    const selectedInputColor= document.querySelector('input[type="radio"][name="color"]:checked');
+    const selectedInputColor= document.querySelectorAll('input[type="radio"][name="color"]:checked');
     if(selectedInputColor){
       changeSubtitle(selectedInputColor,"Color")
     }
+
+    const quantityInput = document.getElementById("quantity");
+    changeQuantity(quantityInput)
+    
+
+    
 
     // const subtitleElement = document.querySelector(`#subtitle${subtitle}`);
     // subtitleElement.innerHTML = `${subtitle}: ${element.value}`; 
@@ -278,22 +353,41 @@ const showContent = (product) => {
     //     changeSize(element);
     //   });
     // });
-
-    
   }
     
 };
 
-
-
-
 showContent(product);
 
-    // products.forEach((product) => {
-    //   const imgProduct = document.getElementById(`img_product${product.id}`);
-    //   imgProduct.addEventListener("click", () => {
-    //       localStorage.setItem("id_product", product.id);
-    //     window.location.href = "../pages/details.html";
-    //   });
-    // });
+//traer informacion del formulario
+const formProduct=document.querySelector("#formAddProduct")
+
+const getForm = (form) => {
+    const formData = new FormData(form);
+    console.log("formData",formData);
+    const dataForm = {};
+    for (const [key, value] of formData.entries()) {
+      dataForm[key] = value;
+      console.log(`${key}`," = ",value, );
+    }
+    console.log("el data form es",dataForm)
+    return dataForm;
+};
+
+const btnBuy = document.getElementById("btn_buy");
+btnBuy.addEventListener("click", (e) => {
+      e.preventDefault();
+        // localStorage.setItem("id_product", product.id);
+      //  debe añadir los productos al carrito para recibirlos en order
+      // window.location.href = "../pages/order.html";
+     const data= getForm(formProduct);
+     console.log(data);
+});
+
+// const btnAdd = document.getElementById("btn_add_cart");
+// btnAdd.addEventListener("click", () => {
+//   //  debe añadir los productos al carrito
+//       showCart(btnAdd);
+//   });
+
 
