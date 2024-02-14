@@ -43,8 +43,7 @@ input[type="number"] {
 }
 
 a,
-.sizes >section >div >.active,
-.sizes >section >div >p {
+.sizes >section >div >label {
     font-size: 0.875em;
     font-family: var(--tipo-secundaria);
 }
@@ -199,13 +198,8 @@ main {
 .sizes >section> div> input[type="radio"][name="size"].active_size {
     border: 2px solid var(--activeSize);
 }
-.sizes >section >div >p{
+.sizes >section >div >label{
     position:absolute;
-}
-.sizes >section >div >.active{
-    font-weight:700;
-    color: var(--activeSize);
-
 }
 
 .description_buy_product .quantity {

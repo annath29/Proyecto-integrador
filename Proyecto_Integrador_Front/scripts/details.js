@@ -14,27 +14,52 @@ import { getById } from "../module/functions_fetch.js";
 //   });
 
 const changeSize =(selectedColorInput) =>{
+  console.log("acceder a las tallas",product.stock[`${selectedColorInput.value}`].talla)
+  const sizeSection = document.getElementById("sizeSection");
+  let sizesHtml=``
+  let count2=1;       
+  const tallas = product.stock[`${selectedColorInput.value}`].talla;
+  for (const tallaKey in tallas) {
+    sizesHtml += `
+      <div>
+        <input class="${count2 === 1 ? 'active_size' : ''}" type="radio" id="size${count2}" name="size" value="${tallaKey}"  ${count2 === 1 ? 'checked' : '' } >
+        <label class="${count2 === 1 ? 'active' : ''}">${tallaKey}</label>
+      </div>
+    `;
 
-  if (selectedColorInput) {
-    console.log("acceder a las tallas",product.stock[`${selectedColorInput.value}`].talla)
-    const sizeSection = document.getElementById("sizeSection");
-    let sizesHtml=``
-    let count2=1;       
-    const tallas = product.stock[`${selectedColorInput.value}`].talla;
-    for (const tallaKey in tallas) {
-      sizesHtml += `
-        <div>
-          <input class="${count2 === 1 ? 'active_size' : ''}" type="radio" id="size${count2}" name="size" value="${tallaKey}"  ${count2 === 1 ? 'checked' : '' } >
-          <p class="${count2 === 1 ? 'active' : ''}">${tallaKey}</p>
-        </div>
-      `;
-
-      const value = tallas[tallaKey];
-      console.log(tallaKey, "=", value);
-      count2++;
-    }
-    sizeSection.innerHTML= sizesHtml;
+    const value = tallas[tallaKey];
+    console.log(tallaKey, "=", value);
+    count2++;
   }
+  sizeSection.innerHTML= sizesHtml;
+
+  const sizesInput = document.querySelectorAll('input[type="radio"][name="size"]');
+  console.log("sizesinput",sizesInput);
+  changeState(sizesInput,"active_size");
+  changeSubtitle(sizesInput,"Size")
+  // sizesInput.forEach(element => {
+  //   element.addEventListener("click", () => {
+  //     const subtitleSize = document.querySelector(`#subtitleSize`);
+  //     subtitleSize.innerHTML = `Size: ${element.value}`; 
+  //   });
+  // });
+
+}
+
+const changeSubtitle = (input,subtitle) =>{
+  input.forEach((element,index) => {
+    if(index==0){
+      console.log("ingreso al index")
+      const subtitleElement = document.querySelector(`#subtitle${subtitle}`);
+      subtitleElement.innerHTML = `${subtitle}: ${element.value}`; 
+      changeSize(element);
+    }
+    element.addEventListener("click", () => {
+      const subtitleElement = document.querySelector(`#subtitle${subtitle}`);
+      subtitleElement.innerHTML = `${subtitle}: ${element.value}`; 
+      changeSize(element);
+    });
+  });
 }
 
 
@@ -48,9 +73,6 @@ const changeState = (elementos,clase) =>{
       });
       elemento.classList.add(clase);
       elemento.checked=true;
-      changeSize(elemento);
-      // const subtitle = document.querySelector("#subtitleColor");
-      // subtitle.innerHTML = `Color: ${elemento.value}`;
     });
   });
 };
@@ -101,7 +123,7 @@ const showContent = (product) => {
             </fieldset>
             <fieldset class="sizes">
               <legend>
-                  <p class="subtitleSize"></p>
+                  <p id="subtitleSize" class="subtitle"></p>
                   <a>What is my size?</a>
               </legend>
               <section id="sizeSection">
@@ -235,19 +257,36 @@ const showContent = (product) => {
       // console.log("color",color)
       count++;
     }
-    
+
     const colorsInput = document.querySelectorAll('input[type="radio"][name="color"]');
     console.log("colorinput",colorsInput);
     changeState(colorsInput,"active_color");
+    changeSubtitle(colorsInput,"Color");
 
     const selectedInputColor= document.querySelector('input[type="radio"][name="color"]:checked');
     if(selectedInputColor){
-      const subtitleColor = document.querySelector("#subtitleColor");
-      subtitleColor.innerHTML = `Color: ${selectedInputColor.value}`;
-      changeSize(selectedInputColor);
+      changeSubtitle(selectedInputColor,"Color")
     }
+
+    // const subtitleElement = document.querySelector(`#subtitle${subtitle}`);
+    // subtitleElement.innerHTML = `${subtitle}: ${element.value}`; 
+    
+    // colorsInput.forEach(element => {
+    //   element.addEventListener("click", () => {
+    //     const subtitleColor = document.querySelector(`#subtitleColor`);
+    //     subtitleColor.innerHTML = `Color: ${element.value}`; 
+    //     changeSize(element);
+    //   });
+    // });
+
+    
   }
+    
 };
+
+
+
+
 showContent(product);
 
     // products.forEach((product) => {
