@@ -25,7 +25,23 @@ export const getById = async (id) => {
     console.log("Error: ", error);
   }
 };
-// getById(0);
-getById(1);
+export const getByName = async (name) => {
+  try {
+    const promesa = await fetch(`${url}?nombre=${name}`);
+    const respuesta = await promesa.json();
+    console.log("rptaNombre:", respuesta[0]);
+    if (!respuesta.length == 0) {
+      return respuesta[0];
+    } else {
+      throw("Producto no encontrado");
+    }
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+};
 
-getAll()
+getByName("Exquisite Earrings");//solo regresa el nombre exacto
+// getById(0);
+// getById(1);
+
+// getAll()

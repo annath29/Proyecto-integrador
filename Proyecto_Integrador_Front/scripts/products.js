@@ -1,7 +1,7 @@
 // alert("conect js products")
 
 // import { listaProductos } from "../module/products_module.js";
-import { filtrarPorTipo, buscarPorNombre } from "../module/functions_module.js";
+import { filtrarPorTipo, buscarPorNombre , ordenarPorPrecio } from "../module/functions_module.js";
 import { getAll } from "../module/functions_fetch.js";
 
 // const prod=[]
@@ -99,11 +99,23 @@ botones.forEach(boton => {
 
 
 
-/**const selectElement = document.getElementById("filter_products");
+const selectElement = document.getElementById("filter_products");
 
-console.log("Texto seleccionado:", selectedText);
+selectElement.addEventListener('change', function() {
+  // Obtiene el valor seleccionado
+  const option = this.value;
+  // const opt=selectElement.options[selectElement.selectedIndex].value;
+  // console.log(opt)
+  console.log("selectOption",option)
+  let sortProducts={}
 
-const opt=selectElement.options[selectElement.selectedIndex].value;
+  if (option === '1') {
+      sortProducts = ordenarPorPrecio(listaProductos, 'ascendente');
+      showCards(sortProducts);
+  } else if (option === '2') {
+      sortProducts = ordenarPorPrecio(listaProductos, 'descendente');
+      showCards(sortProducts);
+  }
+  
+});
 
-console.log(opt)
-*/
