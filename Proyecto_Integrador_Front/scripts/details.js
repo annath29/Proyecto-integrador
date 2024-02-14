@@ -23,7 +23,10 @@ const changeSize =(selectedColorInput) =>{
     const tallas = product.stock[`${selectedColorInput.value}`].talla;
     for (const tallaKey in tallas) {
       sizesHtml += `
-      <input class="${count2 === 1 ? 'active_size' : ''}" type="button" id="size${count2}" name="size" value="${tallaKey}"  ${count2 === 1 ? 'checked' : '' } >
+        <div>
+          <input class="${count2 === 1 ? 'active_size' : ''}" type="radio" id="size${count2}" name="size" value="${tallaKey}"  ${count2 === 1 ? 'checked' : '' } >
+          <p class="${count2 === 1 ? 'active' : ''}">${tallaKey}</p>
+        </div>
       `;
 
       const value = tallas[tallaKey];
@@ -98,7 +101,7 @@ const showContent = (product) => {
             </fieldset>
             <fieldset class="sizes">
               <legend>
-                  <p class="subtitle">Size - 48</p>
+                  <p class="subtitleSize"></p>
                   <a>What is my size?</a>
               </legend>
               <section id="sizeSection">

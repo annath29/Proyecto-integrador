@@ -10,7 +10,7 @@ const getForm = (form) => {
     }
     console.log("el data form es",dataForm)
     return dataForm;
-  };
+};
   
 
 const btnBuy = document.getElementById("btn_buy");

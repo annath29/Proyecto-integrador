@@ -42,7 +42,9 @@ input[type="number"] {
     font-family: var(--tipo-secundaria);
 }
 
-a,input[type="button"][name="size"] {
+a,
+.sizes >section >div >.active,
+.sizes >section >div >p {
     font-size: 0.875em;
     font-family: var(--tipo-secundaria);
 }
@@ -176,13 +178,17 @@ main {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-}
-
-.sizes>section {
     gap: 5px;   
 }
 
-.sizes>section>input[type="button"][name="size"] { 
+.sizes >section >div{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.sizes>section> div> input[type="radio"][name="size"] { 
     width: 2rem;
     height: 2rem;
     appearance: none;
@@ -190,11 +196,16 @@ main {
     border: 1px solid #565E6C;
 }
 
-
-.sizes >section>input[type="button"][name="size"].active_size {
-    border: 1px solid var(--activeSize);
-    font-weight: bold;
+.sizes >section> div> input[type="radio"][name="size"].active_size {
+    border: 2px solid var(--activeSize);
+}
+.sizes >section >div >p{
+    position:absolute;
+}
+.sizes >section >div >.active{
+    font-weight:700;
     color: var(--activeSize);
+
 }
 
 .description_buy_product .quantity {
