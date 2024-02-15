@@ -1,7 +1,7 @@
 import { calcularTotalCompra } from "../module/functions_module.js";
-import { getById} from "../module/functions_fetch.js";
-const buttonCart = document.getElementById("btn_cart");
+import { getById,addProductsCart } from "../module/functions_fetch.js";
 
+const buttonCart = document.getElementById("btn_cart");
 // const productsCart = [
 //       {
 //           id: 1,
@@ -46,25 +46,25 @@ const buttonCart = document.getElementById("btn_cart");
     
 // ]
 
-
-const productsCart= [
-    {
-      "idProduct": 1,
-      "especificaciones": {
-        "color": "golden",
-        "size": "s",
-        "quantity": "1"
-      }
-    },
-    {
-      "idProduct": 2,
-      "especificaciones": {
-        "color": "golden",
-        "size": "s",
-        "quantity": "2"
-      }
-    }
-]
+const productsCart= JSON.parse(localStorage.getItem("data"));
+// const productsCart= [
+//     {
+//       "idProduct": 1,
+//       "especificaciones": {
+//         "color": "golden",
+//         "size": "s",
+//         "quantity": "1"
+//       }
+//     },
+//     {
+//       "idProduct": 2,
+//       "especificaciones": {
+//         "color": "golden",
+//         "size": "s",
+//         "quantity": "2"
+//       }
+//     }
+// ]
 
 export const showCart = (button) => {
   button.addEventListener("click", () => {
@@ -127,9 +127,15 @@ const createModal = async (products) => {
     total.innerHTML=`$ ${precioTotal}`
 
     const continueButton= document.getElementById("btn-continue");
-    continueButton.addEventListener("click",()=>{
-        localStorage.setItem("Cart",JSON.stringify(products))
-        window.location.href = "../pages/order.html";
+    continueButton.addEventListener("click",async()=>{
+        // localStorage.setItem("Cart",JSON.stringify(products))
+        const addcart=await addProductsCart(products);
+        if(addcart){
+            window.location.href = "../pages/order.html";
+        }
+        else{
+            console.error("no se pudo agregar compra");
+        }
     });
 
 };

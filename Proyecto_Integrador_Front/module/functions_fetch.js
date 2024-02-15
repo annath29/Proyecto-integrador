@@ -79,20 +79,22 @@ export const addProductsCart = async(products) =>{
     })
   
     const respuesta= await promesa.json();
-    console.log("respuesta",respuesta)    
+    console.log("respuesta",respuesta) 
+    return true;   
   } catch (error) {
     console.log("Error: ", error);
+    return false;
   }
 }
 
-const idP=1;
-const especificaciones ={color: 'golden', size: 's', quantity: '0'}
-const data =[
-  {
-    idP,
-    especificaciones,
-  }
-]
+// const idP=1;
+// const especificaciones ={color: 'golden', size: 's', quantity: '0'}
+// const data =[
+//   {
+//     idP,
+//     especificaciones,
+//   }
+// ]
 
 // addProductsCart(data)
 // addProductsCart(data)

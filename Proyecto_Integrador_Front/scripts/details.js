@@ -1,5 +1,5 @@
 import { showCart } from "./modalCart.js";
-import { getById,addProductsCart } from "../module/functions_fetch.js";
+import { getById } from "../module/functions_fetch.js";
 
 // const changeSize =(selectedColorInput) =>{
 //   console.log("acceder a las tallas",product.stock[`${selectedColorInput.value}`].talla)
