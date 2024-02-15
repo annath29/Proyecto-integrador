@@ -17,6 +17,10 @@
     --tipo-secundaria: "Manrope", sans-serif;
 }
 
+fieldset{
+    border: none;
+}
+
 h1 {
     font-size: 2.5em;
     font-family: var(--tipo-principal);
@@ -33,12 +37,13 @@ h3 {
 }
 
 p,
-span {
+input[type="number"] {
     font-size: 1em;
     font-family: var(--tipo-secundaria);
 }
 
-a {
+a,
+.sizes >section >div >label {
     font-size: 0.875em;
     font-family: var(--tipo-secundaria);
 }
@@ -89,6 +94,7 @@ main {
 }
 
 .description_images {
+    width: 50%;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -118,6 +124,9 @@ main {
     border: 1px solid var(--verdeBotones);
 }
 
+.description_buy_product{
+    width: 40%;
+}
 .description_buy_product>h1 {
     line-height: 2.5rem;
 }
@@ -133,60 +142,80 @@ main {
 }
 
 .subtitle {
+    font-size: 1em;
+    font-family: var(--tipo-secundaria);
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--grisSubtitulos);
 }
 
-.description_buy_product .colors>div {
+.description_buy_product .colors > section {
     margin: 0.5rem 0rem;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
     gap: 1rem;
+}
+.description_buy_product .colors > section >input[type="radio"][name="color"] {
+    width: 2rem;
+    height: 2rem;
+    appearance: none;
+    background-color: #B37D10;
+    border-radius: 50%;
+}
+.description_buy_product .colors > section > input[type="radio"][name="color"].active_color {
+    border: 2px solid var(--principal);
 }
 
 .description_buy_product .sizes {
     margin-bottom: 0.75rem;
 }
 
-.description_buy_product .sizes>section,
-.description_buy_product .sizes>div {
+.description_buy_product .sizes>legend{
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
-
-.sizes>section>a {
-    font-size: 0.75rem;
+.description_buy_product .sizes>section {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;   
 }
 
-.sizes>div {
-    gap: 5px;
+.sizes >section >div{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
-.sizes>div>a {
+.sizes>section> div> input[type="radio"][name="size"] { 
+    width: 2rem;
+    height: 2rem;
+    appearance: none;
     border-radius: 0.25rem;
     border: 1px solid #565E6C;
-    ;
-    padding: 0.5rem;
 }
 
-.sizes >div .active_size {
-    border: 1px solid var(--activeSize);
-    color: var(--activeSize);
+.sizes >section> div> input[type="radio"][name="size"].active_size {
+    border: 2px solid var(--activeSize);
+}
+.sizes >section >div >label{
+    position:absolute;
 }
 
 .description_buy_product .quantity {
     margin-bottom: 0.75rem;
 }
 
-.description_buy_product .quantity>div {
+.description_buy_product .quantity>section {
     display: flex;
     justify-content: flex-start;
     gap: 1rem;
 }
 
-.quantity>div>button,
-.quantity>div>span {
+.quantity>section>button,
+.quantity>section>input[type="number"] {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,6 +223,12 @@ main {
     height: 2.5rem;
     background: #F3F4F6;
     border-radius: 0.25rem;
+}
+
+.quantity>section> input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .description_buy_product .buttons {
@@ -267,6 +302,7 @@ main {
     align-items: center;
     background: url(../assets/Details/details_video.png);
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     border-radius: 0.5rem;
 }

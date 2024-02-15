@@ -1,10 +1,11 @@
 // alert("conect js products")
 
-import { listaProductos } from "../module/products_module.js";
-import { filtrarPorTipo, buscarPorNombre } from "../module/functions_module.js";
+// import { listaProductos } from "../module/products_module.js";
+import { filtrarPorTipo, buscarPorNombre , ordenarPorPrecio } from "../module/functions_module.js";
+import { getAll } from "../module/functions_fetch.js";
 
 // const prod=[]
-
+let listaProductos = await getAll();
 const buttonAll = document.getElementById("all_products");
 const buttonRing = document.getElementById("rings");
 const buttonNecklace = document.getElementById("necklaces");
@@ -85,11 +86,36 @@ showType(buttonBracelet, "bracelet");
 showType(buttonEarring, "earring");
 showType(buttonNecklace, "Necklace");
 
-/**const selectElement = document.getElementById("filter_products");
+const botones = document.querySelectorAll('.buttons li');
 
-console.log("Texto seleccionado:", selectedText);
+botones.forEach(boton => {
+  boton.addEventListener('click', () => {
+    botones.forEach(b => {
+      b.classList.remove('btn_active');
+    });
+    boton.classList.add('btn_active');
+  });
+});
 
-const opt=selectElement.options[selectElement.selectedIndex].value;
 
-console.log(opt)
-*/
+
+const selectElement = document.getElementById("filter_products");
+
+selectElement.addEventListener('change', function() {
+  // Obtiene el valor seleccionado
+  const option = this.value;
+  // const opt=selectElement.options[selectElement.selectedIndex].value;
+  // console.log(opt)
+  console.log("selectOption",option)
+  let sortProducts={}
+
+  if (option === '1') {
+      sortProducts = ordenarPorPrecio(listaProductos, 'ascendente');
+      showCards(sortProducts);
+  } else if (option === '2') {
+      sortProducts = ordenarPorPrecio(listaProductos, 'descendente');
+      showCards(sortProducts);
+  }
+  
+});
+
