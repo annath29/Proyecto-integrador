@@ -1,0 +1,136 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Estilos del formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+#alert{
+    display:none;
+    color: red ;
+    font-weight: 600;
+}
+
+#nombre_tarjeta{
+    background-color: #ccc;
+}
+#numero_tarjeta{
+    background-color: #ccc;
+    margin-bottom: 0;
+}
+#email{
+    background-color: #ccc;
+}
+#fecha_caducidad{
+    background-color: #ccc;
+    width: 100%;
+    margin-right: 70px;
+    height: 37px;
+    border-radius: 8px;
+    padding-top: 0;
+    
+}
+
+#codigo_tarjeta{
+    background-color: #ccc;
+    width: 135%;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    gap: 37px;
+    
+
+}
+
+.img_div{
+    
+    display: flex;
+    position: relative;
+    justify-content: end;
+    bottom: 34px;
+    margin: 0 auto;
+    margin-bottom: 0;
+    
+    
+}
+.label_codigo{
+    margin-left: 20px;
+}
+.form-group-div{
+    display: flex;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+#numero_telefono{
+    background-color: #ccc;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    gap: 30px;
+}
+#nombre_Completo{
+    background-color: #ccc;
+    width: 100%;
+    margin-right: 70px;
+    height: 37px;
+    border-radius: 8px;
+}
+#password{
+    background-color: #ccc; 
+    border-radius: 8px;
+    height: 37px;
+    width: 100%;
+}
+input[type="date"],
+input[type="password"],
+input[type="number"],
+input[type="text"],
+input[type="email"],
+text {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
