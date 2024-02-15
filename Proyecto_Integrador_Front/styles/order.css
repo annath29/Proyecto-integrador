@@ -151,6 +151,10 @@ main {
   gap: 7rem;
 }
 
+.payment_method>figure>figcaption >p{
+  font-size: 0.875rem;
+}
+
 .payment_method .container_input {
   display: flex;
   margin: 0.5rem 0rem 0.75rem 0rem;

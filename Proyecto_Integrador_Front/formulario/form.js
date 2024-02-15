@@ -35,52 +35,54 @@ const validarform = (jsonData) => {
   }
 
   if(jsonData.nombreCompleto.length <= 3 ){
-    //alert(" el nombre debe tener mas de 3 caracteres");
+    alert(" el nombre debe tener mas de 3 caracteres");
     //const alert= document.getElementById("alert")
       //alert.style.display='block';
+      // const alert= document.getElementById("alert")
+      // alert.style.display='block';
     emptyfields.push("nombreCompleto");
 
   }
   if(jsonData.numeroTelefono.length <=9){
   //alert(" el numero de telefono debe tener mas de 9 caracteres");
     const alert= document.getElementById("alert")
-    alert.style.display='block';
-    emptyfields.push("numeroTelefono");
+    // alert.style.display='block';
+    // emptyfields.push("numeroTelefono");
   }
   if(jsonData.password.length <=5){
-    //alert(" la contraseña debe tener mas de 5 caracteres");
-    const alert= document.getElementById("alert")
-      alert.style.display='block';
+    alert(" la contraseña debe tener mas de 5 caracteres");
+    // const alert= document.getElementById("alert")
+    //   alert.style.display='block';
     emptyfields.push("password");
   }
   if (!emailRegex.test(jsonData.email)) {
-    //alert("El email ingresado no es valido");
-    const alert= document.getElementById("alert")
-      alert.style.display='block';
+    alert("El email ingresado no es valido");
+    // const alert= document.getElementById("alert")
+      // alert.style.display='block';
     emptyfields.push("email");
   }
   if(jsonData.nombreTarjeta.length <=3){
-    //alert("el nombre debe tener mas de 3 caracteres");
-    const alert= document.getElementById("alert")
-      alert.style.display='block';
+    alert("el nombre debe tener mas de 3 caracteres");
+    // const alert= document.getElementById("alert")
+    //   alert.style.display='block';
     emptyfields.push("nombreTarjeta");
   }
   if(jsonData.numeroTarjeta.length <=4){
-    //alert("la contraseña debe tener mas de 5 caracteres");
-    const alert= document.getElementById("alert")
-      alert.style.display='block';
+    alert("la contraseña debe tener mas de 5 caracteres");
+    // const alert= document.getElementById("alert")
+    //   alert.style.display='block';
     emptyfields.push("numeroTarjeta");
   }
   if(jsonData.fecha == ""){
-   // alert("Indique la fecha de caducidad de la tarjeta");
-    const alert= document.getElementById("alert")
-      alert.style.display='block';
+   alert("Indique la fecha de caducidad de la tarjeta");
+    // const alert= document.getElementById("alert")
+    //   alert.style.display='block';
     emptyfields.push("fecha");
   }
   if(jsonData.cvv.length <=2){
     //alert("el codigo de la tarjeta debe tener mas de 2 caracteres");
-    const alert= document.getElementById("alert")
-      alert.style.display='block';
+    // const alert= document.getElementById("alert")
+    //   alert.style.display='block';
     emptyfields.push("cvv");
   }
 
@@ -94,13 +96,15 @@ form.addEventListener("submit", (event) => {
   console.log(validation);
   if (validation) {
     alert(
-      "el formulario tiene los siguientes datos vacios: " +
+      "el formulario tiene los siguientes datos errados: " +
         validation.toString()
     );
   } else {
     //console.log("json", jsonData);
     console.log("data",data);
-    alert("el formulario se ha enviado corectamnete");
+    localStorage.setItem("user",JSON.stringify(data))
+    alert("el formulario se ha enviado correctamente");
     form.reset();
+    window.location.href = "../pages/order.html";
   }
 });
