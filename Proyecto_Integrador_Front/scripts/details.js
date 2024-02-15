@@ -1,5 +1,5 @@
 import { showCart } from "./modalCart.js";
-import { getById } from "../module/functions_fetch.js";
+import { getById,addProductsCart } from "../module/functions_fetch.js";
 
 // const changeSize =(selectedColorInput) =>{
 //   console.log("acceder a las tallas",product.stock[`${selectedColorInput.value}`].talla)
@@ -14,7 +14,6 @@ import { getById } from "../module/functions_fetch.js";
 //         <label class="${count2 === 1 ? 'active' : ''}">${tallaKey}</label>
 //       </div>
 //     `;
-
 //     const value = tallas[tallaKey];
 //     console.log(tallaKey, "=", value);
 //     count2++;
@@ -59,7 +58,7 @@ const changeQuantity=(quantityInput)=>{
 const changeSize = (selectedColorInput) => {
   const selectedStock = product.stock[`${selectedColorInput.value}`];
   if (selectedStock && selectedStock.talla) {
-    console.log("acceder a las tallas", selectedStock.talla);
+    // console.log("acceder a las tallas", selectedStock.talla);
     const sizeSection = document.getElementById("sizeSection");
     let sizesHtml = ``;
     let count2 = 1;
@@ -71,50 +70,49 @@ const changeSize = (selectedColorInput) => {
           <label class="${count2 === 1 ? 'active' : ''}">${sizeKey}</label>
         </div>
       `;
-  
-      const value = sizes[sizeKey];
-      console.log(sizeKey, "=", value);
       count2++;
     }
     sizeSection.innerHTML= sizesHtml;
     
     const sizesInput = document.querySelectorAll('input[type="radio"][name="size"]');
-    console.log("sizesinput",sizesInput);
+    // console.log("sizesinput",sizesInput);
     changeState(sizesInput,"active_size");
     changeSubtitle(sizesInput,"Size", false); 
 
     const quantityInput = document.getElementById("quantity");
     sizesInput.forEach((size,index)=>{
       if(index==0){
+        quantityInput.max = selectedStock.talla[size.value];
+        console.log("cantidad maxima",quantityInput.max);
         quantityInput.value=0
       }
       size.addEventListener("click", () => {
         // changeQuantity(quantityInput)
         const selectedSize = size.value;
         quantityInput.max = selectedStock.talla[selectedSize];
-        console.log(quantityInput.max)
+        console.log("cantidad maxima",quantityInput.max)
         quantityInput.value = 0;
       });
     });
     
-    const selectedSizeInput = document.querySelector('input[type="radio"][name="size"]:checked');
-    if (selectedSizeInput) {
-      const selectedSize = selectedSizeInput.value;
-      quantityInput.max = selectedStock.talla[selectedSize];
-      console.log(quantityInput.max);
-    }
+    // const selectedSizeInput = document.querySelector('input[type="radio"][name="size"]:checked');
+    // if (selectedSizeInput) {
+    //   const selectedSize = selectedSizeInput.value;
+    //   quantityInput.max = selectedStock.talla[selectedSize];
+    //   console.log(quantityInput.max);
+    // }
 
   } else {
+    sizeSection.innerHTML=`
+      <p>No se encontró stock para el color seleccionado<p>
+    `
     console.error("No se encontró stock para el color seleccionado.");
   }
 };
 
-
-
 const changeSubtitle = (inputs,subtitle, callChangeSize = true) =>{
   inputs.forEach((element,index) => {
     if(index==0){
-      console.log("ingreso al index")
       const subtitleElement = document.querySelector(`#subtitle${subtitle}`);
       subtitleElement.innerHTML = `${subtitle}: ${element.value}`; 
       if (callChangeSize) {
@@ -131,7 +129,6 @@ const changeSubtitle = (inputs,subtitle, callChangeSize = true) =>{
   });
 }
 
-
 // Funcion para cmbiar el estado activo de la talla y el color
 const changeState = (elementos,clase) =>{
   elementos.forEach((elemento) => {
@@ -146,7 +143,7 @@ const changeState = (elementos,clase) =>{
   });
 };
 
-//trae el id de la pagina de products mediantge el local storage
+//trae el id de la pagina de products mediante el local storage
 const idProduct = localStorage.getItem("id_product");
 //  console.log(product,"product")
 
@@ -274,7 +271,6 @@ const showContent = (product) => {
 
     //pone en el cotnenedor del video la imagen en el background dinamica
     const figureVideo = document.getElementById("videoFigure");
-    console.log(product.imagenes[0]);
     figureVideo.style.backgroundImage = "url(" + product.imagenes[0] + ")";
 
     //crea la seccion de las imagenes pequenas dinamicamente
@@ -328,66 +324,94 @@ const showContent = (product) => {
     }
 
     const colorsInput = document.querySelectorAll('input[type="radio"][name="color"]');
-    console.log("colorinput",colorsInput);
+    // console.log("colorinput",colorsInput);
     changeState(colorsInput,"active_color");
     changeSubtitle(colorsInput,"Color");
 
     const selectedInputColor= document.querySelectorAll('input[type="radio"][name="color"]:checked');
     if(selectedInputColor){
-      changeSubtitle(selectedInputColor,"Color")
+      changeSubtitle(selectedInputColor,"Color",false)
     }
 
     const quantityInput = document.getElementById("quantity");
     changeQuantity(quantityInput)
-    
-
-    
-
-    // const subtitleElement = document.querySelector(`#subtitle${subtitle}`);
-    // subtitleElement.innerHTML = `${subtitle}: ${element.value}`; 
-    
-    // colorsInput.forEach(element => {
-    //   element.addEventListener("click", () => {
-    //     const subtitleColor = document.querySelector(`#subtitleColor`);
-    //     subtitleColor.innerHTML = `Color: ${element.value}`; 
-    //     changeSize(element);
-    //   });
-    // });
-  }
-    
+  } 
 };
 
 showContent(product);
 
 //traer informacion del formulario
-const formProduct=document.querySelector("#formAddProduct")
+const formProduct=document.querySelector("#formAddProduct");
 
-const getForm = (form) => {
+const validateForm = (formData) =>{
+  if(formData.quantity ==0){
+    alert("la cantidad no puede ser cero")
+    return false;
+  }
+  else{
+    return true;
+  }
+}
+
+const getDataForm = (form) => {
     const formData = new FormData(form);
-    console.log("formData",formData);
-    const dataForm = {};
+    let dataForm = {};
     for (const [key, value] of formData.entries()) {
       dataForm[key] = value;
-      console.log(`${key}`," = ",value, );
+      // console.log(`${key}`," = ",value, );
     }
-    console.log("el data form es",dataForm)
+    // console.log("el data form es",dataForm)
     return dataForm;
 };
 
 const btnBuy = document.getElementById("btn_buy");
 btnBuy.addEventListener("click", (e) => {
       e.preventDefault();
-        // localStorage.setItem("id_product", product.id);
-      //  debe añadir los productos al carrito para recibirlos en order
-      // window.location.href = "../pages/order.html";
-     const data= getForm(formProduct);
-     console.log(data);
+      sendProductToCart();
+      localStorage.removeItem("id_product");
 });
 
-// const btnAdd = document.getElementById("btn_add_cart");
-// btnAdd.addEventListener("click", () => {
-//   //  debe añadir los productos al carrito
-//       showCart(btnAdd);
-//   });
+const btnAdd = document.getElementById("btn_add_cart");
+btnAdd.addEventListener("click", (e) => {
+  e.preventDefault()
+  //  debe añadir los productos al carrito
+  showCart(btnAdd);
+});
 
+const addProductCart = (data) =>{
+  const dataForm=getDataForm(formProduct);
+  const validatedForm = validateForm(dataForm);
+  if (validatedForm){
+    const especificaciones= dataForm;
+    const productoNuevo={
+      idProduct,
+      especificaciones,
+    }
+    console.log("datasdxs",data)
+    data.push(productoNuevo);
+    return true;
+  }
+  return false;
+}
 
+const sendProductToCart =() => {
+  let data=localStorage.getItem("data")
+      if (data === null) {
+        data=[];        
+        console.log("data vacio")
+      } 
+      else{
+        try {
+          data = JSON.parse(data);
+        } catch (error) {
+          console.error("Error al parsear data:", error);
+          data = [];
+        }
+      }
+
+      if(addProductCart(data)){
+        console.log("antes de subir al local")
+        localStorage.setItem("data",JSON.stringify(data));
+      } 
+      console.log("data",data)
+}

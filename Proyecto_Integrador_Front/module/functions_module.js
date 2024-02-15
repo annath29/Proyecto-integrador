@@ -1,3 +1,5 @@
+import { getById} from "../module/functions_fetch.js";
+
 // Función para filtrar productos por tipo
 export const filtrarPorTipo = (productos, tipo) =>{
     return productos.filter(
@@ -25,12 +27,23 @@ export const buscarPorNombre = (productos, nombreBuscar) => {
 }
 
 //Funcion para calcular el total de la compra
-const calcularTotalCompra = (productos) =>{
+export const calcularTotalCompra = async (products) =>{
     let total = 0;  
-    for (let i = 0; i < productos.length; i++) {
-      const producto = productos[i];
-      // console.log(producto);
-      total += producto.cantidad * producto.precio;
-    }  
+    for (const product of products) {
+        try {
+            console.log("product",product);
+            console.log("product",product.idProduct);
+            const p=product.idProduct
+            const producto = await getById(p);
+            total += producto.precioUnitario * product.especificaciones.quantity;
+        } catch (error) {
+            console.log("Error: ", error);
+        }
+    }
+    // for (let i = 0; i < productos.length; i++) {
+    //   const producto = productos[i];
+    //   // console.log(producto);
+    //   total += producto.cantidad * producto.precio;
+    // }  
     return total;
 }
