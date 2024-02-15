@@ -30,6 +30,9 @@ a,
 p {
   font-size: 0.75em;
 }
+.form{
+  cursor: pointer;
+}
 
 h5,
 .cart_product >figure>figcaption .price,
@@ -127,6 +130,22 @@ main {
   color: var(--azulLink);
   font-size: 0.6875em;
   margin-top: 0.5rem;
+}
+.modalForm{
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.modalForm section{
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
 }
 
 .payment_method>figure {

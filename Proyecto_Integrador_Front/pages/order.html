@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/5f1bcae3d7.js" crossorigin="anonymous"></script>
     <title>Order</title>
     <link
       rel="shortcut icon"
@@ -99,7 +100,7 @@
             <figure class="column">
               <img src="../assets/Joyas/Selection 1.png" alt="" />
               <figcaption>
-                <h5>Luxury Charms Ring</h5>
+                <h5 class="titulo">Luxury Charms Ring</h5>
                 <p>Code: 78205</p>
               </figcaption>
             </figure>
@@ -169,7 +170,7 @@
             </figure>
             <div>
               <h5>$125.28</h5>
-              <button type="button">
+              <button type="button" id="btn_delete">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -233,7 +234,7 @@
             </figure>
             <div>
               <h5>$327.71</h5>
-              <button type="button">
+              <button type="button" id="btn_delete">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -290,7 +291,12 @@
         </section>
         <aside class="payment_method">
           <h2>Payment method</h2>
-          <a>Change payment methods</a>
+          <a id="form">Change payment methods</a>
+          <section class="form">
+            <section id="container_form" class="container_form">
+              <!-- aqui se cargan el formulario del cliente -->
+            </section>
+          </section>
           <figure>
             <img src="../assets/logoMastercard.png" alt="logoMastercard" />
             <figcaption>
@@ -470,5 +476,7 @@
     <script type="module" src="../scripts/modalCart.js" ></script>
     <script type="module" src="../scripts/order.js"></script>
     <script type="module" src="../module/products_module.js"></script>
+    <script src="../scripts/modalForm.js"></script>
+    
   </body>
 </html>
