@@ -367,15 +367,17 @@ const getDataForm = (form) => {
 const btnBuy = document.getElementById("btn_buy");
 btnBuy.addEventListener("click", (e) => {
       e.preventDefault();
-      sendProductToCart();
-      localStorage.removeItem("id_product");
+      if(sendProductToCart()){
+        window.location.href = "../pages/order.html";
+      }
 });
 
 const btnAdd = document.getElementById("btn_add_cart");
 btnAdd.addEventListener("click", (e) => {
   e.preventDefault()
-  //  debe añadir los productos al carrito
-  showCart(btnAdd);
+  if(sendProductToCart()){
+    showCart(btnAdd);
+  }
 });
 
 const addProductCart = (data) =>{
@@ -390,8 +392,9 @@ const addProductCart = (data) =>{
     console.log("datasdxs",data)
     data.push(productoNuevo);
     return true;
+  }else{
+    return false;
   }
-  return false;
 }
 
 const sendProductToCart =() => {
@@ -412,6 +415,11 @@ const sendProductToCart =() => {
       if(addProductCart(data)){
         console.log("antes de subir al local")
         localStorage.setItem("data",JSON.stringify(data));
+        return true;
       } 
+      else{
+        console.log("Error al agregar producto")
+        return false;
+      }
       console.log("data",data)
 }
